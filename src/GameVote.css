@@ -1,0 +1,15 @@
+.bet-container {
+	width: 500px;
+	max-width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: nowrap;
+	gap: 16px;
+	margin-top: 200px;
+}
+
+.bet-container > button {
+	padding: 16px;
+}

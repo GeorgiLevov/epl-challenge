@@ -1,0 +1,13 @@
+ul {
+    padding: 16px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+		gap: 24px;
+		flex: 1;
+}
+
+li {
+  font-size: 1.25rem;
+}
