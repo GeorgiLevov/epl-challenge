@@ -1,8 +1,26 @@
-# React + Vite
+# EPL Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Enjoy betting for your favorite teams in the English Premier League and win points for each game outcome you guess correctly!
 
-Currently, two official plugins are available:
+Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- For information about the `rules` - please sign in and visit the rules page 🙂
+
+## App Features
+
+1. #
+2. #
+3. #
+
+## Results, scores, updates - but how ?
+
+
+
+## Data Storage - where, when ?
+
+## Changelog
+
+### Version 0.1.0
+- MVP fully executed
+- Restructured code layout for better visibility
+- Started styling overhaul, moving to styled-components instead of single-file components

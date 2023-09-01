@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 
-import Logo from "./LOGO";
-import Nav from "./Nav";
-import WeeksObject from "./assets/games_by_week.json"
 import { Link } from "react-router-dom";
-import GoBack from "./GoBackBtn";
+import Logo from "../../components/LOGO";
+import List from "../../components/List";
+import WeeksObject from "../../assets/games_by_week.json"
+import GoBack from "../../components/GoBackBtn";
 import "./Weeks.css"
 
 const Weeks = () => {
@@ -27,9 +27,9 @@ const Weeks = () => {
 		<>
 			<div className="main-content-container">
 					<Logo/>
-					<Nav items={matchweekLinks} />
+					<List items={matchweekLinks} />
 			</div>
-			<GoBack/>
+			{/* <GoBack/> */}
 		</>
 	)
 }

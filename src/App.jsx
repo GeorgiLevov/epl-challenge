@@ -1,13 +1,15 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import './App.css'
-import Home from './Home'
-import Weeks from './Weeks'
-import Matches from './Matches'
-import GameVote from './GameVote'
-import Signup from './Signup'
-import Score from './Score'
-import Rules from './Rules'
-import PageNotFound from './PageNotFound'
+import Home from './Pages/Homepage'
+import Weeks from './Pages/Matchweeks'
+import Matches from './Pages/Matchlist'
+import GameVote from './Pages/GameVote'
+import Signup from './Pages/Signup Page'
+import Score from './Pages/Scorepage'
+import Rules from './Pages/Gamerules'
+import PageNotFound from './Pages/NotFound'
+
+
 function App() {
 	const location = useLocation();
 

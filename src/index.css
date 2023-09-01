@@ -6,15 +6,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-	--clr-epl-main: hsl(283,58%,21%);
-	--clr-white: hsl(0, 0%, 100%);
-
-	--clr-red: hsl(339,100%,50%);
-	--clr-green: hsl(152,100%,50%);
-	--clr-blue: hsl(183,100%,50%);
-	--clr-yellow: hsl(65,100%,50%);
-
 }
 
 html {

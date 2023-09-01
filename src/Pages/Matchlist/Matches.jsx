@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 import { useParams, Link } from "react-router-dom";
-import WeeksObject from "./assets/games_by_week.json"
-import { canStillBet } from "./Functions/gameFunctions";
+import WeeksObject from "../../assets/games_by_week.json"
+import { canStillBet } from "../../Functions/gameFunctions";
 import './Matches.css'
-import GoBack from "./GoBackBtn";
+import GoBack from "../../components/GoBackBtn";
 import styled from "styled-components/macro";
 
 const Matches = () => {
@@ -42,7 +42,7 @@ const Matches = () => {
 				})
 			}		
 			</MatchWrapper>
-				<GoBack/>
+				{/* <GoBack/> */}
 		</>
 	)
 }

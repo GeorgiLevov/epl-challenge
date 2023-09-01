@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import GoBack from "./GoBackBtn";
-import Logo from "./LOGO";
+import GoBack from "../../components/GoBackBtn";
+import Logo from "../../components/LOGO";
 
 const Rules = () => {
 	return (

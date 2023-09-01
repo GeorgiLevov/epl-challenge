@@ -1,8 +1,8 @@
 import './Signup.css'
-import Logo from './LOGO';
+import Logo from '../../components/LOGO';
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import { createUser } from './Functions/userFunctions';
+import { createUser } from '../../Functions/userFunctions';
 
 const Signup = () => {
   const navigate = useNavigate();

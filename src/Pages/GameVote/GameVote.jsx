@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams,useSearchParams } from "react-router-dom";
-import { setNewBet } from "./Functions/bettingFunctions";
-import { checkIfAlreadyBet, getUserObject } from "./Functions/userFunctions";
-import { initialBetObject } from "./Functions/bettingFunctions";
-import GoBack from "./GoBackBtn";
+import { setNewBet } from "../../Functions/bettingFunctions";
+import { checkIfAlreadyBet, getUserObject } from "../../Functions/userFunctions";
+import { initialBetObject } from "../../Functions/bettingFunctions";
+import GoBack from "../../components/GoBackBtn";
 
-import Games from "./assets/games.json"
+import Games from "../../assets/games.json"
 import "./GameVote.css"
 
 const GameVote = () => {

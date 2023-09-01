@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import './Nav.css'
+import './List.css'
 
-function Nav({items=[],children}) {
+function List({items=[],children}) {
 
 const listitems = items.map((item,index) => {
 		return <li key={index} style={{fontSize:"2rem"}}>{item}</li>
@@ -16,4 +16,4 @@ const listitems = items.map((item,index) => {
   )
 }
 
-export default Nav
+export default List

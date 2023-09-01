@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import epl_logo_1x from './assets/epl-logo-1x.png'
-import epl_logo_2x from './assets/epl-logo-2x.png'
-import epl_logo_3x from './assets/epl-logo-3x.png'
+import epl_logo_1x from '../assets/epl-logo-1x.png'
+import epl_logo_2x from '../assets/epl-logo-2x.png'
+import epl_logo_3x from '../assets/epl-logo-3x.png'
 import Picture from './Picture';
 
 const Logo = () => {

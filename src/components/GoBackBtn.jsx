@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useNavigate} from "react-router-dom";
-
+import Button from "./Button";
 const GoBack = ({times=1}) => {
 
 	const navigate = useNavigate();
@@ -8,7 +8,7 @@ const GoBack = ({times=1}) => {
 		navigate(-parseInt(times));
 	}
 
-return (<button style={{padding: "16px 40px", margin: "64px",}} onClick={goBack}>Back</button>)
+return (<Button variant="outline" size="large" onClick={goBack}>Back</Button>)
 
 }
 

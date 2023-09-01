@@ -1,8 +1,8 @@
-import { getUserObject } from "./Functions/userFunctions";
-import { checkBets } from "./Functions/bettingFunctions";
+import { getUserObject } from "../../Functions/userFunctions";
+import { checkBets } from "../../Functions/bettingFunctions";
 
-import GoBack from "./GoBackBtn";
-import Nav from "./Nav";
+import GoBack from "../../components/GoBackBtn";
+import List from "../../components/List";
 import { useEffect, useState } from "react";
 
 const Score = () => {
@@ -32,7 +32,7 @@ const Score = () => {
 		{betsVisible && 
 		<>
 			<h1>Bets</h1>
-			<Nav>
+			<List>
 				{bethistory.map((game,index) => <>
 				<li key={index}>
 				<p>{game.home} : {game.away}</p>
@@ -40,7 +40,7 @@ const Score = () => {
 				</li>
 				</>
 				)}
-			</Nav>
+			</List>
 		</>
 		}
 
