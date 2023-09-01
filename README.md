@@ -20,6 +20,12 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 
 ## Changelog
 
+### Version 0.1.2
+- Minor performance improvements for faster load time
+- Back button and surrounding styling is now decoupled, sticking to bottom of page fixed
+
+- *In progress* Create page wrapper to push content inward, for better visibility
+
 ### Version 0.1.1
 - Added new main font - "Radio Canada" + a fallback font
 - Updated Back button placement on multiple pages 
