@@ -2,10 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { checkIfNewUser, getUserObject } from '../../Functions/userFunctions';
 import List from '../../components/List'
-import './Home.css'
 import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
 import Footer from "../../components/Footer";
+import styled from "styled-components";
 
 
 const Home = () => {
@@ -45,7 +45,7 @@ const Home = () => {
 		{ loggedIn 
 		? <>
 			<Logo />
-			<h1 style={{ marginBottom:"2em"}}>{currentGreeting} {user.username}</h1>
+			<StyledGreeting>{currentGreeting} {user.username}</StyledGreeting>
 			<List items={links}/> 
 			</>
 		:<>
@@ -61,3 +61,9 @@ const Home = () => {
 }
 
 export default Home;
+
+
+const StyledGreeting = styled.h1`
+	font-size: 2.25rem;
+	margin: 20px;
+`

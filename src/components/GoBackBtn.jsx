@@ -8,7 +8,7 @@ const GoBack = ({times=1}) => {
 		navigate(-parseInt(times));
 	}
 
-return (<Button variant="outline" size="large" onClick={goBack}>Back</Button>)
+return (<Button variant="outline" size="medium" onClick={goBack}>Back</Button>)
 
 }
 

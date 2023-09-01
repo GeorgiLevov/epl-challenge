@@ -20,6 +20,14 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 
 ## Changelog
 
+### Version 0.1.1
+- Added new main font - "Radio Canada" + a fallback font
+- Updated Back button placement on multiple pages 
+- Updated Logo sizing - (will probably update again once fully refactored for cross-device responsiveness)
+- Minor styling touch-ups
+
+- *In progress* updating page styling so Back button doesn't stick to bottom of page
+
 ### Version 0.1.0
 - MVP fully executed
 - Restructured code layout for better visibility

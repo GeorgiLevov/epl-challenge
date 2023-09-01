@@ -7,7 +7,6 @@ const Rules = () => {
 		<>
 		<Logo/>
 		<h1>Game Rules</h1>
-		<br/><br/>
 		<article style={{padding:"24px",fontSize:"1.2rem"}}>
 		<p>- You have access to all game fixtures from the 2023/2024 Premier league season.</p>
 		<p>- You can navigate to each matchweek and bet on any of the games for that week.</p>
@@ -18,6 +17,7 @@ const Rules = () => {
 		</article>
 
 		<GoBack/>
+		<br/><br/>
 		</>
 	)
 }

@@ -5,7 +5,7 @@ ul {
     align-items: center;
     flex-direction: column;
 		gap: 24px;
-		flex: 1;
+		margin-bottom: 40px;
 }
 
 li {

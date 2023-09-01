@@ -17,7 +17,12 @@ const SIZES = {
   large: {
     "--borderRadius": 4 + "px",
     "--fontSize": 24 / 16 + "rem",
-    "--padding": "20px 40px"
+    "--padding": "22px 40px"
+  },
+  xl: {
+    "--borderRadius": 4 + "px",
+    "--fontSize": 30 / 16 + "rem",
+    "--padding": "30px 64px"
   }
 };
 
@@ -51,8 +56,7 @@ const ButtonBase = styled.button`
   justify-content: center;
   align-items: center;
 
-  min-height: 48px;
-  min-width: 175px;
+  min-width: 200px;
   width: auto;
   margin: 0;
   padding: var(--padding);
