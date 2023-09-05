@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import './App.css'
+import styled from 'styled-components'
+
 import Home from './Pages/Homepage'
 import Weeks from './Pages/Matchweeks'
 import Matches from './Pages/Matchlist'
@@ -14,7 +15,7 @@ function App() {
 	const location = useLocation();
 
   return (
-    <>
+    <StyledApp>
     <Routes location={location} key={location.pathname}>
 			{/* Routes */}
 			<Route path="/" element={<Home/>} />
@@ -28,8 +29,13 @@ function App() {
 			{/* 404 page */}
 			<Route path="*" element={<PageNotFound/> } />
     </Routes>
-    </>
+    </StyledApp>
   )
 }
 
 export default App;
+
+const StyledApp = styled.div`
+height: 100%;
+height: 100dvh;
+`

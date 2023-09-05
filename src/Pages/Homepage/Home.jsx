@@ -6,6 +6,7 @@ import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
 import Footer from "../../components/Footer";
 import styled from "styled-components";
+import PageWrapper from "../../components/PageWrapper";
 
 
 const Home = () => {
@@ -43,16 +44,16 @@ const Home = () => {
 	return (
 		<>
 		{ loggedIn 
-		? <>
+		? <PageWrapper>
 			<Logo />
 			<StyledGreeting>{currentGreeting} {user.username}</StyledGreeting>
 			<List items={links}/> 
-			</>
-		:<>
+			</PageWrapper>
+		:<PageWrapper>
 			<h2>Please Sign up to play below</h2>
 			<br/><br/>
 			<button><Link to="/signup">Take me to Sign up</Link></button>
-    </>
+    </PageWrapper>
 		}
 		<Footer/>
 		</>

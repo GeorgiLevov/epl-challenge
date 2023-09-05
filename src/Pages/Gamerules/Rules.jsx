@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import GoBack from "../../components/GoBackBtn";
 import Logo from "../../components/LOGO";
+import PageWrapper from "../../components/PageWrapper";
 
 const Rules = () => {
 	return (
-		<>
+		<PageWrapper>
 		<Logo/>
 		<h1>Game Rules</h1>
 		<article style={{padding:"24px",fontSize:"1.2rem"}}>
@@ -18,7 +19,7 @@ const Rules = () => {
 
 		<GoBack/>
 		<br/><br/>
-		</>
+		</PageWrapper>
 	)
 }
 

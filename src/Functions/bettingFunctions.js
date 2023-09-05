@@ -1,16 +1,22 @@
 import { addPointToUserScore, addNewUserBet, updateUserBets } from "./userFunctions";
 import { getGameScoreFormatted, gameHasFinished } from "./gameFunctions";
 
-export const initialBetObject = (id,homeTeam,awayTeam,result = "0",betStatus = "pending")=> {
-	return {id:id,home:homeTeam,away:awayTeam,result:result,betStatus:betStatus}
+
+export const initialBetObject = (id,homeTeam,awayTeam,betResult="0",betStatus="pending",gameResult="pending")=> {
+
+
+	return {id:id,home:homeTeam,away:awayTeam,result:betResult,betStatus:betStatus,gameResult:gameResult}
 }
 
 export const setNewBet = (userBet) => {
   // First - preemptively check if game has finished
 	if (gameHasFinished(userBet.id)) {
 		
+		// add game result to bet object for local reference
+		const gameResult = getGameScoreFormatted(userBet.id); 
+		userBet.gameResult = gameResult;
 		// check if the user guessed the outcome correctly
-		if (getGameScoreFormatted(userBet.id) === userBet.result){
+		if (gameResult === userBet.result){
 			// user won the bet - they get a point added to their score
 			userBet.betStatus = "won";
 

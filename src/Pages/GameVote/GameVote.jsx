@@ -8,6 +8,7 @@ import GoBack from "../../components/GoBackBtn";
 
 import Games from "../../assets/games.json"
 import "./GameVote.css"
+import PageWrapper from "../../components/PageWrapper";
 
 const GameVote = () => {
 	const {id} = useParams();
@@ -45,18 +46,16 @@ const GameVote = () => {
 	}
 
 return (
-	<>
-	<div className="main-content-container">
+	<PageWrapper>
 	{ game && 
     (<div className="bet-container">
 			{disableBetting ? <button disabled>Bet on {game.home}</button> : <button onClick={()=>handleVote("+1")}>Bet on {game.home}</button> } 
-			{disableBetting ? <button disabled>Bet on {game.away}</button> : <button onClick={()=>handleVote("-1")}>Bet on {game.away}</button> } 
 			{disableBetting ? <button disabled>Bet on Draw</button>	 : <button onClick={()=>handleVote("0")}>Bet on Draw</button>	 } 
+			{disableBetting ? <button disabled>Bet on {game.away}</button> : <button onClick={()=>handleVote("-1")}>Bet on {game.away}</button> } 
 		</div>)
 	}
-	</div>	
 	<GoBack/>	
-	</>
+	</PageWrapper>
 )
 }
 

@@ -3,6 +3,7 @@ import Logo from '../../components/LOGO';
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { createUser } from '../../Functions/userFunctions';
+import PageWrapper from '../../components/PageWrapper';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Signup = () => {
 
 if (localStorage.getItem('user-epl-stats') == null) {
 	return (
-		<>
+		<PageWrapper>
 				<Logo />
 				<form id="signup-form" onSubmit={handleSubmit}>
 					<label>
@@ -37,7 +38,7 @@ if (localStorage.getItem('user-epl-stats') == null) {
 					</label>
 					<button type="submit">Start Playing</button>
 				</form>
-		</>
+		</PageWrapper>
 	)
 } else {
 	return navigate("/")
