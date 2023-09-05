@@ -5,6 +5,7 @@ import { canStillBet } from "../../Functions/gameFunctions";
 import './Matches.css'
 import GoBack from "../../components/GoBackBtn";
 import styled from "styled-components/macro";
+import PageWrapper from "../../components/PageWrapper";
 
 const Matches = () => {
   const {id} = useParams(); 
@@ -14,7 +15,7 @@ const Matches = () => {
   const votingAllowed = canStillBet(votebyDate);
 
 	return (
-		<>
+		<PageWrapper>
 			<MatchWrapper>
 			<h1 style={{marginBottom:"20px"}}>Matchweek {id}</h1>
 			<h2 style={{marginBottom:"20px"}}>last betting day: {votebyDate}</h2>
@@ -42,8 +43,8 @@ const Matches = () => {
 				})
 			}		
 			</MatchWrapper>
-				{/* <GoBack/> */}
-		</>
+				<GoBack/>
+		</PageWrapper>
 	)
 }
 

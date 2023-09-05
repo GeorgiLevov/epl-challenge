@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import Logo from "../../components/LOGO";
 import List from "../../components/List";
 import WeeksObject from "../../assets/games_by_week.json"
-import GoBack from "../../components/GoBackBtn";
-import "./Weeks.css"
+// import GoBack from "../../components/GoBackBtn";
+
+import PageWrapper from "../../components/PageWrapper";
 
 const Weeks = () => {
 
@@ -24,13 +25,11 @@ const Weeks = () => {
 
 
 	return (
-		<>
-			<div className="main-content-container">
-					<Logo/>
-					<List items={matchweekLinks} />
-			</div>
+		<PageWrapper>
+			<Logo/>
+			<List items={matchweekLinks} />
 			{/* <GoBack/> */}
-		</>
+		</PageWrapper>
 	)
 }
 export default Weeks;

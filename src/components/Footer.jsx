@@ -8,7 +8,8 @@ const Footer = () => {
 export default Footer;
 
 const StyledFooter = styled.footer`
-	margin-left: auto;
-	margin-top: auto;
-	padding: 8px 12px;
+	position: fixed;
+	bottom: 0;
+	right: 0;	padding: 8px 12px;
+	letter-spacing: 2px;
 `

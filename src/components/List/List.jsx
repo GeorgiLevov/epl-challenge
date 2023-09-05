@@ -1,19 +1,32 @@
 /* eslint-disable react/prop-types */
-import './List.css'
+import styled from 'styled-components';
 
-function List({items=[],children}) {
-
-const listitems = items.map((item,index) => {
-		return <li key={index} style={{fontSize:"2rem"}}>{item}</li>
-	});
-
+function List({items=[],children = []}) {
 
   return (
-    <ul>
-		{listitems}
-		{children}
-    </ul>
+    <StyledUnorderedList>
+		{items.map((item,index) => <StyledListItem key={index}>{item}</StyledListItem>)}
+		{children.map((item,index) => <StyledListItem key={index}>{item}</StyledListItem>)}
+    </StyledUnorderedList>
   )
 }
 
 export default List
+
+const StyledUnorderedList = styled.ul`
+	padding: 16px;
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 24px;
+	margin-bottom: 40px;
+	width: 100%;
+	`
+
+const StyledListItem = styled.li`
+	width: 100%;
+	max-width: 900px;
+	text-align: center;
+	font-size: 2rem;
+`

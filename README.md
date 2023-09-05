@@ -20,6 +20,12 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 
 ## Changelog
 
+### Version 0.1.3
+- Updated general pages layout, for better visibility (page wrapper) 
+- Upgraded Score page, now users can see which teams they voted for on each bet.  
+
+- *In progress* Resources DB upgrade
+
 ### Version 0.1.2
 - Minor performance improvements for faster load time
 - Back button and surrounding styling is now decoupled, sticking to bottom of page fixed
