@@ -27,7 +27,7 @@
 	],
   
 	"Matchweek 3": [
-		{"votebyDate": "09/25/2023"},
+		{"votebyDate": "08/25/2023"},
 		{"id":"21","home":"Chelsea" , "homeScore":"3" , "away":"Luton Town" , "awayScore":"0"},
 		{"id":"22","home":"Bournemouth" , "homeScore":"0" , "away":"Tottenham Hotspur" , "awayScore":"2"},
 		{"id":"23","home":"Arsenal" , "homeScore":"2" , "away":"Fulham" , "awayScore":"2"},
@@ -41,7 +41,7 @@
 	],
   
 	"Matchweek 4": [
-		{"votebyDate": "09/15/2023"},
+		{"votebyDate": "09/01/2023"},
 		{"id":"31","home":"Luton Town" , "homeScore":"1" , "away":"West Ham United" , "awayScore":"2"},
 		{"id":"32","home":"Sheffield United" , "homeScore":"" , "away":"Everton" , "awayScore":""},
 		{"id":"33","home":"Brentford" , "homeScore":"" , "away":"Bournemouth" , "awayScore":""},
