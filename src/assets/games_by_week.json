@@ -43,14 +43,13 @@
 	"Matchweek 4": [
 		{"votebyDate": "09/01/2023"},
 		{"id":"31","home":"Luton Town" , "homeScore":"1" , "away":"West Ham United" , "awayScore":"2"},
-		{"id":"32","home":"Sheffield United" , "homeScore":"" , "away":"Everton" , "awayScore":""},
-		{"id":"33","home":"Brentford" , "homeScore":"" , "away":"Bournemouth" , "awayScore":""},
-
+		{"id":"32","home":"Sheffield United" , "homeScore":"2" , "away":"Everton" , "awayScore":"2"},
+		{"id":"33","home":"Brentford" , "homeScore":"2" , "away":"Bournemouth" , "awayScore":"2"},
 		{"id":"34","home":"Burnley" , "homeScore":"2" , "away":"Tottenham Hotspur" , "awayScore":"5"},
 		{"id":"35","home":"Chelsea" , "homeScore":"0" , "away":"Nottingham Forest" , "awayScore":"1"},
 		{"id":"36","home":"Manchester City" , "homeScore":"5" , "away":"Fulham" , "awayScore":"1"},
 		{"id":"37","home":"Brighton & Hove Albion" , "homeScore":"3" , "away":"Newcastle United" , "awayScore":"1"},
-		{"id":"38","home":"Crystal Palace" , "homeScore":"" , "away":"Wolverhampton Wanderers" , "awayScore":""},
+		{"id":"38","home":"Crystal Palace" , "homeScore":"3" , "away":"Wolverhampton Wanderers" , "awayScore":"2"},
 		{"id":"39","home":"Liverpool" , "homeScore":"3" , "away":"Aston Villa" , "awayScore":"0"},
 		{"id":"40","home":"Arsenal" , "homeScore":"3" , "away":"Manchester United" , "awayScore":"1"}
 	],
