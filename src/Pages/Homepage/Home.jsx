@@ -1,12 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { checkIfNewUser, getUserObject } from '../../Functions/userFunctions';
+import { checkIfNewUser, getUserObject, retroUpdateGameResults } from '../../Functions/userFunctions';
 import List from '../../components/List'
 import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 import PageWrapper from "../../components/PageWrapper";
+import { getAllGames } from "../../Functions/gameFunctions";
 
 
 const Home = () => {
@@ -37,6 +38,9 @@ const Home = () => {
 		else {
 			setLoggedIn(true);
 			setUser(getUserObject());
+
+			// getAllGames();
+			// retroUpdateGameResults(getUserObject().bethistory)
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);

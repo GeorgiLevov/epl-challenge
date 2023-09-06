@@ -2,7 +2,7 @@ import './Signup.css'
 import Logo from '../../components/LOGO';
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import { createUser } from '../../Functions/userFunctions';
+import { createUser, getUserObject } from '../../Functions/userFunctions';
 import PageWrapper from '../../components/PageWrapper';
 
 const Signup = () => {
@@ -20,8 +20,7 @@ const Signup = () => {
 			navigate("/");
 		}
 	}
-
-if (localStorage.getItem('user-epl-stats') == null) {
+if (getUserObject() === null) {
 	return (
 		<PageWrapper>
 				<Logo />

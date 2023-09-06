@@ -11,6 +11,47 @@ import PageWrapper from "../../components/PageWrapper";
 import { COLORS } from "../../Tools/CONSTANTS";
 import GameBetPointer from "../../components/GameBetPointer";
 
+
+const Score = () => {
+  let {score, bethistory} = getUserObject();
+	const [bets,setBets] = useState(false);
+	const [betsVisible,setbetsVisible] = useState(true);
+
+	useEffect(()=> {
+		if (bethistory.length < 1){
+			setbetsVisible(false);
+		}
+		else{
+			checkBets(bethistory);
+			setBets(true);
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[]);
+
+	useEffect(()=> {
+			setbetsVisible(true);
+	},[bets]);
+
+	return (
+		<PageWrapper>
+		<h1>Total Score</h1>
+		<h1 style={{fontSize: "30vh"}}>{score}</h1>
+		{betsVisible && 
+		<>
+			<h1>Bets</h1>
+			<List>
+				{bethistory.map(GameResult)}
+			</List>
+		</>
+		}
+
+		<GoBack/>
+		</PageWrapper>
+	)
+}
+
+export default Score;
+
 const GameResult = (bet,index) =>{
 	// let teamStates;
 	// switch (game.result) {
@@ -48,49 +89,11 @@ const GameResult = (bet,index) =>{
 	}
 	return (
 		<>
-			<StyledGameResult style={{ '--color': gameState }}><span>{bet.home}</span> <GameBetPointer bet={bet.result} game={bet.gameResult}/> <span>{bet.away}</span></StyledGameResult>
+			<StyledGameResult key={index} style={{ '--color': gameState }}>
+				<div><span>{bet.home}</span></div> <GameBetPointer bet={bet.result} game={bet.gameResult}/> <div><span>{bet.away}</span></div>
+				</StyledGameResult>
 		</>
 )}
-
-
-const Score = () => {
-  let {score, bethistory} = getUserObject();
-	const [bets,setBets] = useState(false);
-	const [betsVisible,setbetsVisible] = useState(true);
-
-	useEffect(()=> {
-		if (bethistory.length < 1){
-			setbetsVisible(false);
-		}
-		else{
-			checkBets(bethistory);
-			setBets(true);
-		}
-	},[]);
-
-	useEffect(()=> {
-			setbetsVisible(true);
-	},[bets]);
-
-	return (
-		<PageWrapper>
-		<h1>Total Score</h1>
-		<h1 style={{fontSize: "30vh"}}>{score}</h1>
-		{betsVisible && 
-		<>
-			<h1>Bets</h1>
-			<List>
-				{bethistory.map(GameResult)}
-			</List>
-		</>
-		}
-
-		<GoBack/>
-		</PageWrapper>
-	)
-}
-
-export default Score;
 
 
 const StyledGameResult = styled.p`
@@ -106,7 +109,12 @@ const StyledGameResult = styled.p`
 	  display: inline;
 		text-align: center;
 		font-size: 1.25rem;
-		flex: 1 1 0px;
+		/* flex: 1 1 0px; */
+	}
+	> div {
+    margin: 0 auto;
+    text-align: center;
+    width: 27%;
 	}
 		
 `

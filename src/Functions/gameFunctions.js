@@ -1,16 +1,30 @@
 /* eslint-disable no-unused-vars */
-import AllGames from "../assets/games.json"
 import AllWeeks from "../assets/games_by_week.json"
 
 
-export const getGameObject = (gameID) =>{
-	return AllGames.filter(game=> String(game.id) === String(gameID))[0]
+export const getAllGames = (allGameData = AllWeeks) => {
+	const allGameArray = Object.values(allGameData);
+	const allGames = allGameArray.map(gameWeek => {
+		return gameWeek.slice(1);
+	});
+	
+	return allGames.flat();
+}
+
+export const getGameObject = (gameID) => {
+	const allGames = getAllGames();
+	return allGames.filter(game=> String(game.id) === String(gameID))[0]
 }
 
 export const getGameScoreFormatted = (gameID) =>{
 	const game = getGameObject(gameID);
-	const subtractedGameResult = parseInt(game.homeScore) - parseInt(game.awayScore); 
-	return subtractedGameResult > 0 ? "+1" : subtractedGameResult < 0 ? "-1" : "0"  
+	if (game.homeScore !=="" && game.awayScore !=="")  {
+		const subtractedGameResult = parseInt(game.homeScore) - parseInt(game.awayScore); 
+		return subtractedGameResult > 0 ? "+1" : subtractedGameResult < 0 ? "-1" : "0"  
+	}
+	else {
+		return "pending"  
+	}
 }
 
 export const gameHasFinished = (gameID) => {

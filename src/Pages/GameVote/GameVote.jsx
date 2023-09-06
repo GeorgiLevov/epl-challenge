@@ -6,13 +6,15 @@ import { checkIfAlreadyBet, getUserObject } from "../../Functions/userFunctions"
 import { initialBetObject } from "../../Functions/bettingFunctions";
 import GoBack from "../../components/GoBackBtn";
 
-import Games from "../../assets/games.json"
+import { getAllGames } from "../../Functions/gameFunctions";
 import "./GameVote.css"
 import PageWrapper from "../../components/PageWrapper";
 
 const GameVote = () => {
 	const {id} = useParams();
-	let game = Games.filter(game => game.id === String(id))[0];
+	const allGames = getAllGames();
+	
+	let game = allGames.filter(game => game.id === String(id))[0];
 	const user = getUserObject();
 	
 	const [disableBetting,setDisableBetting] = useState(false);

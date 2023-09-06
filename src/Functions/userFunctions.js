@@ -1,4 +1,5 @@
 import ls from 'localstorage-slim';
+import { getGameScoreFormatted} from "./gameFunctions";
 
 const setEncryption = false;
 const userStorageKey = "user-epl-stats";
@@ -28,6 +29,7 @@ export const getUserObject = () => {
 	if (!checkIfNewUser()){
 		return ls.get(userStorageKey, { decrypt: setEncryption })
 	}
+	else return null;
 }
 
 export const addPointToUserScore = () => {
@@ -52,3 +54,19 @@ export const updateUserBets = (newBetHistory) => {
 	user.bethistory = newBetHistory;
 	ls.set(userStorageKey, user, { encrypt: setEncryption });
 };
+
+export const retroUpdateGameResults = (userBetHistory) => {
+	// First - filter to games which don't have the game result field
+	// Second - update to include the game result field
+	// Last - update user data
+
+	const newBetHistory = userBetHistory.map((bet) => {
+		if(typeof(bet.gameResult) === "undefined") {
+			const gameResult = getGameScoreFormatted(bet.id); 
+			bet = {...bet, "gameResult": gameResult}
+		}
+		return bet
+	})
+	
+	return updateUserBets(newBetHistory);
+}
