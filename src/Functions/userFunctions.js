@@ -61,7 +61,7 @@ export const retroUpdateGameResults = (userBetHistory) => {
 	// Last - update user data
 
 	const newBetHistory = userBetHistory.map((bet) => {
-		if(typeof(bet.gameResult) === "undefined") {
+		if(typeof(bet.gameResult) === "undefined" || bet.gameResult === "pending" ) {
 			const gameResult = getGameScoreFormatted(bet.id); 
 			bet = {...bet, "gameResult": gameResult}
 		}

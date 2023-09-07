@@ -39,8 +39,8 @@ const Home = () => {
 			setLoggedIn(true);
 			setUser(getUserObject());
 
-			// getAllGames();
-			// retroUpdateGameResults(getUserObject().bethistory)
+			getAllGames();
+			retroUpdateGameResults(getUserObject().bethistory)
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
