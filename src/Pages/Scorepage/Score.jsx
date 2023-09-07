@@ -39,7 +39,7 @@ const Score = () => {
 		{betsVisible && 
 		<>
 			<h1>Bets</h1>
-			<List>
+			<List variant="scorelist">
 				{bethistory.map(GameResult)}
 			</List>
 		</>
@@ -96,7 +96,7 @@ const GameResult = (bet,index) =>{
 )}
 
 
-const StyledGameResult = styled.p`
+const StyledGameResult = styled.div`
 	/* border-bottom: 5px solid; */
 	background: var(--color);
   /* border-image-slice: 1; */
@@ -108,13 +108,12 @@ const StyledGameResult = styled.p`
 	> * {
 	  display: inline;
 		text-align: center;
-		font-size: 1.25rem;
+		font-size: 1.1rem;
 		/* flex: 1 1 0px; */
 	}
 	> div {
     margin: 0 auto;
     text-align: center;
     width: 27%;
-	}
-		
+	}		
 `

@@ -1,13 +1,21 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
 
-function List({items=[],children = []}) {
+function List({items=[],children = [], variant}) {
+
+	let StyledComponent;
+  if (variant === "scorelist") {
+    StyledComponent = StyledScoreList;
+  } else {
+		StyledComponent = StyledUnorderedList;
+		// throw new Error(`Unrecognized Button variant: ${variant}`);
+  }
 
   return (
-    <StyledUnorderedList>
+    <StyledComponent>
 		{items.map((item,index) => <StyledListItem key={index}>{item}</StyledListItem>)}
 		{children.map((item,index) => <StyledListItem key={index}>{item}</StyledListItem>)}
-    </StyledUnorderedList>
+    </StyledComponent>
   )
 }
 
@@ -15,6 +23,17 @@ export default List
 
 const StyledUnorderedList = styled.ul`
 	padding: 16px;
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 24px;
+	margin-bottom: 40px;
+	width: 100%;
+	`
+
+const StyledScoreList = styled.ul`
+	padding: 0px;
 	list-style-type: none;
 	display: flex;
 	align-items: center;
