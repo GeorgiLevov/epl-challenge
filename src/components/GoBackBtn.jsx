@@ -1,29 +1,22 @@
 /* eslint-disable react/prop-types */
+import * as React from "react";
 import { useNavigate} from "react-router-dom";
 import Button from "./Button";
-import styled from "styled-components";
-
+import BackButtonPNG from "../assets/go-back-arrow.svg"
+import Picture from "./Picture";
 
 
 const GoBack = ({times=1}) => {
-
 	const navigate = useNavigate();
 	const goBack = () => {
 		navigate(-parseInt(times));
 	}
 
 return (
-	<StyledBackButtonWrapper>
-		<Button variant="outline" size="medium" onClick={goBack}>Back</Button>
-	</StyledBackButtonWrapper>
+	
+		<Button variant="backButton" onClick={goBack}><Picture source1x={BackButtonPNG}/></Button>
 )
 
 }
 
 export default GoBack;
-
-
-
-const StyledBackButtonWrapper = styled.div`
-	margin: 20px 0px 20px 0px;
-`

@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
-import { COLORS } from "../Tools/CONSTANTS";
-
+import { COLORS, SHADOWS, QUERIES } from "../Tools/CONSTANTS";
 
 const SIZES = {
   small: {
@@ -26,7 +25,7 @@ const SIZES = {
   }
 };
 
-const Button = ({ variant, size, children, onClick=()=>{return;}})=> {
+const Button = ({ variant , size , children, onClick=()=>{return;}})=> {
 	const styles = SIZES[size];
 	
 	let StyledComponent;
@@ -36,6 +35,8 @@ const Button = ({ variant, size, children, onClick=()=>{return;}})=> {
     StyledComponent = OutlineButton;
   } else if (variant === "ghost") {
     StyledComponent = GhostButton;
+  } else if (variant === "backButton") {
+    StyledComponent = BackButton;
   } else {
 		throw new Error(`Unrecognized Button variant: ${variant}`);
   }
@@ -80,7 +81,7 @@ const ButtonBase = styled.button`
 	
 	  &:hover,
 		&:focus {
-			box-shadow: hsla(0, 0%, 0%, 0.1) 0 4px 12px;
+			box-shadow: ${SHADOWS.boxshadowLight};
 			outline-color: ${COLORS.primary};
 			outline-offset: 4px;
 
@@ -103,7 +104,7 @@ const FillButton = styled(ButtonBase)`
     background-color: ${COLORS.primaryLight};
   }
 `;
-const OutlineButton = styled(ButtonBase)`
+export const OutlineButton = styled(ButtonBase)`
   background-color: ${COLORS.white};
   color: ${COLORS.primary};
   border: 2px solid currentColor;
@@ -113,6 +114,7 @@ const OutlineButton = styled(ButtonBase)`
 		border-color: ${COLORS.primaryLight};
   }
 `;
+
 const GhostButton = styled(ButtonBase)`
   color: ${COLORS.gray};
   background-color: transparent;
@@ -126,6 +128,48 @@ const GhostButton = styled(ButtonBase)`
     color: ${COLORS.black};
   }
 `;
+
+const BackButton = styled(ButtonBase)`
+	isolation: isolate;
+	position: fixed;
+	bottom: 24px;
+	right: 16px;
+	min-width: 64px;
+	width: 64px;
+	height: 64px;
+
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	/* transform: scale(0.8); */
+	
+	background-color: transparent;
+	outline-color: ${COLORS.primaryLight};
+	outline-offset: 6px;
+	
+	@media ${QUERIES.tabletAndUp} {
+    width: 96px;
+		height: 96px;
+		bottom: 32px;
+		right: 24px;
+  }
+
+	&:hover,
+	&:focus {
+		ridge: ${COLORS.primary};
+		transform: scale(1.2);
+	}
+	&:hover {
+		transform: translateY(0px);
+		transform: scale(1.2);
+	}
+	&:active {
+		border-color: ${COLORS.primaryLight};
+	}
+  
+
+`
 
 
 export default Button;

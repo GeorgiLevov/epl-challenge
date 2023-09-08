@@ -20,16 +20,16 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 
 ## Changelog
 
-<!-- ### Version 0.1.5
+Version 0.1.5
 
-- 
-- 
-- 
+- *REMOVED* Retroactive betting data updated function
+- Added Logic to show last bets instead of all bets in Scorepage
+- Created Bonus Points Button
+- Updated Back button and it's location for each relevant page 
 
-- *In progress* Creating admin panel for faster score input as well as stat tracking 
-- *In progress* Updating Match Betting page styling 
-- *In progress* Adding game scores into Scorepage
-- *Need to remove* Retroactive betting data updated function -->
+- *Not Started* Admin panel for faster score input as well as stat logging 
+- *Not Started* Match betting page restyling 
+- *Not Started* Adding game scores into Scorepage
 
 ### Version 0.1.4
 

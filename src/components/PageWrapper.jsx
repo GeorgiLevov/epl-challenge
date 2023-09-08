@@ -10,10 +10,11 @@ export default PageWrapper;
 
 const StyledWrapper = styled.div`
 		padding: 8px;
-    padding-bottom: 20px;
-    height: inherit;
+    padding-bottom: 64px;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+		z-index: 2;
 `

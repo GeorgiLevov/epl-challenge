@@ -34,15 +34,22 @@ export const checkBets = (bethistory) => {
 		const gameID = bet.id;
 
 		//checking if the user bet isn't processed yet
-		if (bet.betStatus==="pending") {
+		if (bet.betStatus==="pending" ) {
 			//checking if game is finished
 			if (gameHasFinished(bet.id)) {
+				let gameResult = getGameScoreFormatted(gameID);
 				//comparing game score to bet score
-				if (getGameScoreFormatted(gameID) === bet.result){
+				if (gameResult === bet.result){
 					bet.betStatus = "won";
 					addPointToUserScore();
 				}
-				else { bet.betStatus = "lost";}
+				else { 
+					bet.betStatus = "lost";
+					bet.gameResult = gameResult;
+				}
+				if (bet.gameResult==="pending") {
+				bet.gameResult = gameResult;
+				}
 			}
 		}
 	return bet;

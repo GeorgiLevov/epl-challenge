@@ -10,11 +10,13 @@ import PageWrapper from "../../components/PageWrapper";
 // import Team from "../../components/Team";
 import { COLORS } from "../../Tools/CONSTANTS";
 import GameBetPointer from "../../components/GameBetPointer";
+import Button from "../../components/Button";
 
 
 const Score = () => {
   let {score, bethistory} = getUserObject();
 	const [bets,setBets] = useState(false);
+	const [showLastGames,setShowLastGames] = useState(true);
 	const [betsVisible,setbetsVisible] = useState(true);
 
 	useEffect(()=> {
@@ -32,19 +34,37 @@ const Score = () => {
 			setbetsVisible(true);
 	},[bets]);
 
+
+	const lastGames = (numGames) => bethistory.slice(0, numGames)
+	const lastGamesCount = 10;
+
 	return (
 		<PageWrapper>
-		<h1>Total Score</h1>
-		<h1 style={{fontSize: "30vh"}}>{score}</h1>
+			<ScoreWrapper>
+				<h1>Total Score</h1>
+				<StyledScore>{score}</StyledScore>
+			</ScoreWrapper>
 		{betsVisible && 
 		<>
-			<h1>Bets</h1>
-			<List variant="scorelist">
-				{bethistory.map(GameResult)}
-			</List>
-		</>
-		}
+			{showLastGames 
+			? <>
+					<StyledHeading>Last {lastGamesCount} bets</StyledHeading>
+					<List variant="scorelist">
+						{lastGames(lastGamesCount).map(GameResult)}
+					</List>
+					{bethistory.length > 10 && <Button variant="outline" size="medium" onClick={()=>setShowLastGames(false)}>Show all bets</Button> }
+				</>
+			: <>
+					<StyledHeading>All bets</StyledHeading>
+					<List variant="scorelist">
+						{bethistory.map(GameResult)}
+					</List>
+					<Button variant="outline" size="medium" onClick={()=>setShowLastGames(true)}>Show latest bets</Button>
+			</>
 
+			}
+		</>
+				}
 		<GoBack/>
 		</PageWrapper>
 	)
@@ -116,4 +136,19 @@ const StyledGameResult = styled.div`
     text-align: center;
     width: 27%;
 	}		
+`
+
+const ScoreWrapper = styled.div`
+margin: 0 auto;
+margin-bottom: 20px;
+`
+
+const StyledHeading = styled.h1`
+margin-bottom: 24px;
+`
+
+const StyledScore = styled.p`
+	font-size: 13rem;
+	font-weight: 700;
+	text-align: center;
 `

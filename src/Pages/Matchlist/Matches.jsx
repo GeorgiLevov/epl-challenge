@@ -6,6 +6,7 @@ import './Matches.css'
 import GoBack from "../../components/GoBackBtn";
 import styled from "styled-components/macro";
 import PageWrapper from "../../components/PageWrapper";
+import { COLORS } from "../../Tools/CONSTANTS";
 
 const Matches = () => {
   const {id} = useParams(); 
@@ -15,6 +16,7 @@ const Matches = () => {
   const votingAllowed = canStillBet(votebyDate);
 
 	return (
+<>
 		<PageWrapper>
 			<MatchWrapper>
 			<h1 style={{marginBottom:"20px"}}>Matchweek {id}</h1>
@@ -43,12 +45,14 @@ const Matches = () => {
 				})
 			}		
 			</MatchWrapper>
-				<GoBack/>
 		</PageWrapper>
+		<GoBack/>
+		</>
 	)
 }
 
 const MatchWrapper = styled.div`
+	background-color: ${COLORS.white};
 	width: 100%;
 	max-width: 700px;
 	display: flex;
@@ -56,6 +60,8 @@ const MatchWrapper = styled.div`
 	align-items:center;
   flex-wrap: nowrap;
 	gap: 16px;
+	z-index: 2;
+	margin-bottom: 48px;
 `
 
 const Match = styled.div`

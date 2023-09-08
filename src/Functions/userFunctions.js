@@ -32,9 +32,9 @@ export const getUserObject = () => {
 	else return null;
 }
 
-export const addPointToUserScore = () => {
+export const addPointToUserScore = (pointsToAdd=1) => {
 	const user = getUserObject();	
-	const newScore = parseInt(user.score) + 1;
+	const newScore = parseInt(user.score) + pointsToAdd;
 	user.score = newScore;
 	
 	ls.set(userStorageKey, user, { encrypt: setEncryption });

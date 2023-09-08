@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { checkIfNewUser, getUserObject, retroUpdateGameResults } from '../../Functions/userFunctions';
+import { addPointToUserScore, checkIfNewUser, getUserObject, retroUpdateGameResults } from '../../Functions/userFunctions';
 import List from '../../components/List'
 import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
@@ -30,6 +30,15 @@ const Home = () => {
 					)
 	});
 
+
+	const handleBonusPoints = () => {
+		// giving unfortunate players a boost
+		if (user.score < 10) {
+			addPointToUserScore(10);
+		}
+	}
+
+
 	useEffect(() => {
 		
 		if (checkIfNewUser()) {
@@ -39,8 +48,6 @@ const Home = () => {
 			setLoggedIn(true);
 			setUser(getUserObject());
 
-			getAllGames();
-			retroUpdateGameResults(getUserObject().bethistory)
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -52,6 +59,9 @@ const Home = () => {
 			<Logo />
 			<StyledGreeting>{currentGreeting} {user.username}</StyledGreeting>
 			<List items={links}/> 
+
+			{user.username === "Joanne" && <Button variant="fill" size="large" onClick={()=>handleBonusPoints()}>Get 10 Bonus Points</Button> }
+
 			</PageWrapper>
 		:<PageWrapper>
 			<h2>Please Sign up to play below</h2>
