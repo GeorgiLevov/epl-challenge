@@ -1,13 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { addPointToUserScore, checkIfNewUser, getUserObject, retroUpdateGameResults } from '../../Functions/userFunctions';
+import { addPointToUserScore, checkIfNewUser, getUserObject } from '../../Functions/userFunctions';
 import List from '../../components/List'
 import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 import PageWrapper from "../../components/PageWrapper";
-import { getAllGames } from "../../Functions/gameFunctions";
 
 
 const Home = () => {
@@ -60,7 +59,7 @@ const Home = () => {
 			<StyledGreeting>{currentGreeting} {user.username}</StyledGreeting>
 			<List items={links}/> 
 
-			{user.username === "Joanne" && <Button variant="fill" size="large" onClick={()=>handleBonusPoints()}>Get 10 Bonus Points</Button> }
+			{user.username.includes("Joanne") && <Button variant="fill" size="large" onClick={()=>handleBonusPoints()}>Get 10 Bonus Points</Button> }
 
 			</PageWrapper>
 		:<PageWrapper>
