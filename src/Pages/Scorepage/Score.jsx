@@ -141,6 +141,7 @@ const StyledGameResult = styled.div`
 const ScoreWrapper = styled.div`
 margin: 0 auto;
 margin-bottom: 20px;
+text-align: center;
 `
 
 const StyledHeading = styled.h1`
