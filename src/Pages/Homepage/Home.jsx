@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { addPointToUserScore, checkIfNewUser, getUserObject } from '../../Functions/userFunctions';
@@ -30,14 +31,8 @@ const Home = () => {
 	});
 
 
-	const handleBonusPoints = () => {
-		// giving unfortunate players a boost
-		if (user.score < 10) {
-			addPointToUserScore(10);
-		}
-	}
-
-
+	
+	
 	useEffect(() => {
 		
 		if (checkIfNewUser()) {
@@ -59,8 +54,6 @@ const Home = () => {
 			<StyledGreeting>{currentGreeting} {user.username}</StyledGreeting>
 			<List items={links}/> 
 
-			{user.username.includes("Joanne") && <Button variant="fill" size="large" onClick={()=>handleBonusPoints()}>Get 10 Bonus Points</Button> }
-
 			</PageWrapper>
 		:<PageWrapper>
 			<h2>Please Sign up to play below</h2>
@@ -71,7 +64,7 @@ const Home = () => {
 		<Footer/>
 		</>
 	)
-
+	
 }
 
 export default Home;
@@ -80,4 +73,16 @@ export default Home;
 const StyledGreeting = styled.h1`
 	font-size: 2.25rem;
 	margin: 20px;
+
+
+
+
+
+/* OLD CODE - ONE TIME USES */
+	// const handleBonusPoints = () => {
+// 	// giving unfortunate players a boost
+// 	if (user.score < 10) {
+// 		addPointToUserScore(10);
+// 	}
+// }
 `

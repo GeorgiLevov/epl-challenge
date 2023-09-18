@@ -65,7 +65,7 @@
 		{"id":"47","home":"Everton" , "homeScore":"0" , "away":"Arsenal" , "awayScore":"1"},
 		{"id":"48","home":"Bournemouth" , "homeScore":"0" , "away":"Chelsea" , "awayScore":"0"},
 		{"id":"49","home":"Newcastle United" , "homeScore":"1" , "away":"Brentford" , "awayScore":"0"},
-		{"id":"50","home":"Nottingham Forest" , "homeScore":"" , "away":"Burnley" , "awayScore":""}
+		{"id":"50","home":"Nottingham Forest" , "homeScore":"1" , "away":"Burnley" , "awayScore":"1"}
 	],
 	
 	"Matchweek 6": [
