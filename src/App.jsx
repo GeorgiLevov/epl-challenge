@@ -9,6 +9,7 @@ import Signup from './Pages/Signup Page'
 import Score from './Pages/Scorepage'
 import Rules from './Pages/Gamerules'
 import PageNotFound from './Pages/NotFound'
+import Admin from './Pages/Admin Pages'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <Routes location={location} key={location.pathname}>
 			{/* Routes */}
 			<Route path="/" element={<Home/>} />
+			<Route path="/admin" element={<Admin/>} />
 			<Route path="/signup" element={<Signup/>} />
 			<Route path="/rules" element={<Rules/> } />
 			<Route path="/score" element={<Score/> } />

@@ -3,6 +3,7 @@ import { getGameScoreFormatted} from "./gameFunctions";
 
 const setEncryption = false;
 const userStorageKey = "user-epl-stats";
+const adminPASS = "checkibreki";
 const initiateUserObject = (username)=> {return {username: username, score:'0', bethistory:[]}	}
 
 
@@ -54,6 +55,21 @@ export const updateUserBets = (newBetHistory) => {
 	user.bethistory = newBetHistory;
 	ls.set(userStorageKey, user, { encrypt: setEncryption });
 };
+
+export const checkIfAdmin = (password) => {
+	const user = getUserObject();
+
+	if (password === adminPASS) {
+		if(user.admin !== true) {
+			user.admin = true
+			ls.set(userStorageKey, user, { encrypt: setEncryption });
+		}
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 
 export const retroUpdateGameResults = (userBetHistory) => {
 	// First - filter to games which don't have the game result field

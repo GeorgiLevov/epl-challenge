@@ -20,15 +20,14 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 
 ## Changelog
 
-<!-- ### Version 0.1.6
-- Fixed Score page title to center-align 
-- 
-- 
-- 
+### Version 0.1.6
+- Score page text and layout updates
+- Admin panel created for more consistand, faster score updates
+- *In Progress* GameWeek, Match betting UI Overhhul
 
-- *Not Started* Match betting page restyling 
-- *Not Started* Admin panel for faster score input as well as stat logging 
-- *Not Started* Adding game scores into Scorepage -->
+- *Not Started* Adding game scores into Score page
+- *Not Started* Back button functionality should be optional and limited in use
+- *Not Started* Options Menu should be created for personalization of app
 
 
 ### Version 0.1.5
