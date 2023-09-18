@@ -36,6 +36,7 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 - Added Logic to show last bets instead of all bets in Scorepage
 - Created Bonus Points Button
 - Updated Back button and it's location for each relevant page 
+- Phone Update 1
 
 - *Not Started* Admin panel for faster score input as well as stat logging 
 - *Not Started* Match betting page restyling 
