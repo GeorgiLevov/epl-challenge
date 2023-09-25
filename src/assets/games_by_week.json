@@ -70,16 +70,16 @@
 	
 	"Matchweek 6": [
 		{"votebyDate": "09/22/2023"},
-		{"id":"51","home":"Chelsea" , "homeScore":"" , "away":"Aston Villa" , "awayScore":""},
-		{"id":"52","home":"Crystal Palace" , "homeScore":"" , "away":"Fulham" , "awayScore":""},
-		{"id":"53","home":"Luton Town" , "homeScore":"" , "away":"Wolverhampton" , "awayScore":""},
-		{"id":"54","home":"Manchester City" , "homeScore":"" , "away":"Nottingham Forest" , "awayScore":""},
-		{"id":"55","home":"Brentford" , "homeScore":"" , "away":"Everton" , "awayScore":""},
-		{"id":"56","home":"Burnley" , "homeScore":"" , "away":"Manchester United" , "awayScore":""},
-		{"id":"57","home":"Arsenal" , "homeScore":"" , "away":"Tottenham" , "awayScore":""},
-		{"id":"58","home":"Brighton" , "homeScore":"" , "away":"Bournemouth" , "awayScore":""},
-		{"id":"59","home":"Liverpool" , "homeScore":"" , "away":"West Ham" , "awayScore":""},
-		{"id":"60","home":"Sheffield United" , "homeScore":"" , "away":"Newcastle United" , "awayScore":""}
+		{"id":"51","home":"Chelsea" , "homeScore":"0" , "away":"Aston Villa" , "awayScore":"1"},
+		{"id":"52","home":"Crystal Palace" , "homeScore":"0" , "away":"Fulham" , "awayScore":"0"},
+		{"id":"53","home":"Luton Town" , "homeScore":"1" , "away":"Wolverhampton" , "awayScore":"1"},
+		{"id":"54","home":"Manchester City" , "homeScore":"2" , "away":"Nottingham Forest" , "awayScore":"0"},
+		{"id":"55","home":"Brentford" , "homeScore":"1" , "away":"Everton" , "awayScore":"3"},
+		{"id":"56","home":"Burnley" , "homeScore":"0" , "away":"Manchester United" , "awayScore":"1"},
+		{"id":"57","home":"Arsenal" , "homeScore":"2" , "away":"Tottenham" , "awayScore":"2"},
+		{"id":"58","home":"Brighton" , "homeScore":"3" , "away":"Bournemouth" , "awayScore":"1"},
+		{"id":"59","home":"Liverpool" , "homeScore":"3" , "away":"West Ham" , "awayScore":"1"},
+		{"id":"60","home":"Sheffield United" , "homeScore":"0" , "away":"Newcastle United" , "awayScore":"8"}
 	],
   
 	"Matchweek 7": [
