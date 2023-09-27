@@ -32,6 +32,5 @@ export default Rules;
 const RuleHeader = styled.article`
   padding:24px;
   font-size:1.2rem;
-  background-color:${COLORS.white};
 	z-index: 2;
 `

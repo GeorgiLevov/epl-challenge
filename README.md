@@ -21,12 +21,13 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 ## Changelog
 
 ### Version 0.1.6
+- Overall restyling changes
 - Score page text and layout updates
-- Admin panel created for more consistand, faster score updates
-- *In Progress* GameWeek, Match betting UI Overhhul
+- Admin panel created but will currently be used only for debugging purposes
+- Back button locations and page placement updated
+- *In Progress* Matchweek, UI Overhhul
 
 - *Not Started* Adding game scores into Score page
-- *Not Started* Back button functionality should be optional and limited in use
 - *Not Started* Options Menu should be created for personalization of app
 
 
@@ -35,7 +36,7 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 - Added Logic to show last bets instead of all bets in Scorepage
 - Created Bonus Points Button
 - Updated Back button and it's location for each relevant page 
-- Phone Update 1
+- Sucessfull test - app updated through mobile phone
 
 - *Not Started* Admin panel for faster score input as well as stat logging 
 - *Not Started* Match betting page restyling 

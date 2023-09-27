@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import styled from "styled-components";
 
 import { checkBets } from "../../Functions/bettingFunctions";
@@ -14,7 +15,10 @@ import Button from "../../components/Button";
 
 
 const Score = () => {
-  let {score, bethistory} = getUserObject();
+  const count = useMotionValue(0);
+  const finalScore = useTransform(count, Math.round);
+	let {score, bethistory} = getUserObject();
+
 	const [bets,setBets] = useState(false);
 	const [showLastGames,setShowLastGames] = useState(true);
 	const [betsVisible,setbetsVisible] = useState(true);
@@ -27,7 +31,11 @@ const Score = () => {
 			checkBets(bethistory);
 			setBets(true);
 		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+
+		const animation = animate(count, parseInt(score), { duration: 6 });
+		return animation.stop;
+		
+			// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[]);
 
 	useEffect(()=> {
@@ -42,7 +50,7 @@ const Score = () => {
 		<PageWrapper>
 			<ScoreWrapper>
 				<h1>Total Score</h1>
-				<StyledScore>{score}</StyledScore>
+				<StyledScore>{finalScore}</StyledScore>
 			</ScoreWrapper>
 		{betsVisible && 
 		<>
@@ -92,19 +100,19 @@ const GameResult = (bet,index) =>{
 	switch (bet.gameResult) {
 		case '+1':
 			// gameState = `linear-gradient(90deg, ${COLORS.green} 40%, ${COLORS.red} 60%)`;
-			gameState = `linear-gradient(90deg, ${COLORS.green} 40%, ${COLORS.white} 40%, ${COLORS.white} 60%, ${COLORS.red} 60%)`;
+			gameState = `linear-gradient(90deg, ${COLORS.green} 40%, ${COLORS.transparent} 40%, ${COLORS.transparent} 60%, ${COLORS.red} 60%)`;
 			break;
 			case '-1':
 				// gameState = `linear-gradient(90deg, ${COLORS.red} 40%, ${COLORS.green} 60%)`;
-				gameState = `linear-gradient(90deg, ${COLORS.red} 40%, ${COLORS.white} 40%, ${COLORS.white} 60%, ${COLORS.green} 60%)`;
+				gameState = `linear-gradient(90deg, ${COLORS.red} 40%, ${COLORS.transparent} 40%, ${COLORS.transparent} 60%, ${COLORS.green} 60%)`;
 				break;
 			case '0':
 				// gameState = COLORS.yellow;
-				gameState = `linear-gradient(90deg, ${COLORS.yellow} 40%, ${COLORS.white} 40%, ${COLORS.white} 60%, ${COLORS.yellow} 60%)`;
+				gameState = `linear-gradient(90deg, ${COLORS.yellow} 40%, ${COLORS.transparent} 40%, ${COLORS.transparent} 60%, ${COLORS.yellow} 60%)`;
 				break;
 			default:
 			// gameState = COLORS.blue;
-			gameState = `linear-gradient(90deg, ${COLORS.blue} 40%, ${COLORS.white} 40%, ${COLORS.white} 60%, ${COLORS.blue} 60%)`;
+			gameState = `linear-gradient(90deg, ${COLORS.blue} 40%, ${COLORS.transparent} 40%, ${COLORS.transparent} 60%, ${COLORS.blue} 60%)`;
 
 	}
 	return (
@@ -148,7 +156,7 @@ const StyledHeading = styled.h1`
 margin-bottom: 24px;
 `
 
-const StyledScore = styled.p`
+const StyledScore = styled(motion.h1)`
 	font-size: 13rem;
 	font-weight: 700;
 	text-align: center;

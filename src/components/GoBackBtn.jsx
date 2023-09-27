@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import * as React from "react";
 import { useNavigate} from "react-router-dom";
 import Button from "./Button";
 import BackButtonPNG from "../assets/go-back-arrow.svg"

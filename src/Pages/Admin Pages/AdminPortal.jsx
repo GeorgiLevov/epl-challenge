@@ -86,7 +86,6 @@ const AdminPortal = () =>{
 } 
 
 const MatchWrapper = styled.div`
-	background-color: ${COLORS.white};
 	width: 100%;
 	max-width: 700px;
 	display: flex;

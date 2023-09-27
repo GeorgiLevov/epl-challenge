@@ -22,7 +22,6 @@ function List({items=[],children = [], variant}) {
 
 export default List
 const StyledUnorderedList = styled.ul`
-	background-color: ${COLORS.white};
 	padding: 16px;
 	list-style-type: none;
 	display: flex;
@@ -34,7 +33,6 @@ const StyledUnorderedList = styled.ul`
 	`
 
 const StyledScoreList = styled.ul`
-	background-color: ${COLORS.white};
 	padding: 0px;
 	list-style-type: none;
 	display: flex;

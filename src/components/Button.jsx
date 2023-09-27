@@ -131,14 +131,12 @@ const GhostButton = styled(ButtonBase)`
 
 const BackButton = styled(ButtonBase)`
 	isolation: isolate;
-	position: fixed;
-	bottom: 24px;
-	right: 16px;
+
 	min-width: 64px;
 	width: 64px;
 	height: 64px;
 
-	margin: 0px;
+	margin: 8px 0px;
 	padding: 0px;
 	border: 1px solid transparent;
 	border-radius: 50%;
@@ -152,7 +150,6 @@ const BackButton = styled(ButtonBase)`
     width: 96px;
 		height: 96px;
 		bottom: 32px;
-		right: 24px;
   }
 
 	&:hover,
@@ -161,7 +158,6 @@ const BackButton = styled(ButtonBase)`
 		transform: scale(1.2);
 	}
 	&:hover {
-		transform: translateY(0px);
 		transform: scale(1.2);
 	}
 	&:active {
