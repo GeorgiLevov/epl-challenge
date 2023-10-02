@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import AllWeeks from "../assets/games_by_week.json"
+import { setBackup } from "./userFunctions";
 
 
 export const getAllGames = (allGameData = AllWeeks) => {
@@ -14,6 +15,13 @@ export const getAllGames = (allGameData = AllWeeks) => {
 export const getGameObject = (gameID) => {
 	const allGames = getAllGames();
 	return allGames.filter(game=> String(game.id) === String(gameID))[0]
+}
+
+export const checkLast10Pending = (lastBets) => {
+	if (lastBets.length === 10 && lastBets.every(game=> game.betStatus === "pending")){
+		return setBackup();
+	}
+	else return false
 }
 
 export const getGameScoreFormatted = (gameID) =>{

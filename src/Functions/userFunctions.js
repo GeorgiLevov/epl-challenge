@@ -1,9 +1,12 @@
 import ls from 'localstorage-slim';
 import { getGameScoreFormatted} from "./gameFunctions";
 
+
 const setEncryption = false;
-const userStorageKey = "user-epl-stats";
-const adminPASS = "checkibreki";
+const userStorageKey = import.meta.env.EPL__USER_KEY;
+const backupStorageKey = import.meta.env.EPL__BACKUP;
+const adminPASS = import.meta.env.EPL__ADMIN_PASS;
+
 const initiateUserObject = (username)=> {return {username: username, score:'0', bethistory:[]}	}
 
 
@@ -17,7 +20,7 @@ export const checkIfAlreadyBet = (gameID) => {
 
 	if(gameIDMatched.length > 0) {return true}
 	else {return false}
-} 
+}
 
 export const createUser = (username) => {
 	const newUser = initiateUserObject(username)
@@ -29,6 +32,14 @@ export const createUser = (username) => {
 export const getUserObject = () => {
 	if (!checkIfNewUser()){
 		return ls.get(userStorageKey, { decrypt: setEncryption })
+	}
+	else return null;
+}
+
+export const setBackup = () => {
+	if (!checkIfNewUser()){
+		const user = getUserObject();	
+		ls.set(backupStorageKey, user, { encrypt: setEncryption })
 	}
 	else return null;
 }

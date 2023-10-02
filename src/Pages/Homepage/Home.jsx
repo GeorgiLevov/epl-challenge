@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { addPointToUserScore, checkIfNewUser, getUserObject } from '../../Functions/userFunctions';
+import { checkIfNewUser, getUserObject } from '../../Functions/userFunctions';
 import List from '../../components/List'
 import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
@@ -30,8 +30,6 @@ const Home = () => {
 	});
 
 
-	
-	
 	useEffect(() => {
 		
 		if (checkIfNewUser()) {
@@ -40,7 +38,6 @@ const Home = () => {
 		else {
 			setLoggedIn(true);
 			setUser(getUserObject());
-
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);

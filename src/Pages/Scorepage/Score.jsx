@@ -10,6 +10,7 @@ import List from "../../components/List";
 import { COLORS } from "../../Tools/CONSTANTS";
 import GameBetPointer from "../../components/GameBetPointer";
 import Button from "../../components/Button";
+import { checkLast10Pending } from "../../Functions/gameFunctions";
 
 
 const Score = () => {
@@ -38,6 +39,7 @@ const Score = () => {
 
 	useEffect(()=> {
 			setbetsVisible(true);
+			checkLast10Pending(lastGames(lastGamesCount));
 	},[bets]);
 
 
@@ -79,21 +81,6 @@ const Score = () => {
 export default Score;
 
 const GameResult = (bet,index) =>{
-	// let teamStates;
-	// switch (game.result) {
-	// 	case '+1':
-	// 		teamStates = ["winner","loser"];
-	// 		break;
-	// 		case '-1':
-	// 			teamStates = ["loser","winner"];
-	// 		break;
-	// 		case '0':
-	// 		teamStates = ["drawn","drawn"];
-	// 		break;
-	// 		default:
-	// 		teamStates = ["pending","pending"];
-	// }
-	
 	let gameState;
 	switch (bet.gameResult) {
 		case '+1':
