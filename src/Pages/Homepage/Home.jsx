@@ -70,7 +70,7 @@ export default Home;
 
 
 const StyledGreeting = styled.h1`
-	font-size: 3rem;
+	font-size: 2.75rem;
 	margin: 20px;
 
 
