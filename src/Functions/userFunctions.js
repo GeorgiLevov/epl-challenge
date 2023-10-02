@@ -7,9 +7,6 @@ const userStorageKey = "user-epl-stats";
 const backupStorageKey = "backup-epl-stats";
 const adminPASS = import.meta.env.EPL__ADMIN_PASS;
 
-console.log(process.env.EPL__USER_KEY);
-console.log(process.env.EPL__BACKUP);
-
 const initiateUserObject = (username)=> {return {username: username, score:'0', bethistory:[]}	}
 
 
