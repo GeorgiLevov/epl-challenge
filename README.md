@@ -28,8 +28,7 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 - *In Progress* Matchweek, UI Overhhul
 
 - *Not Started* Adding game scores into Score page
-- *Not Started* Options Menu should be created for personalization of app
-
+- *Not Started* Time tracker for Weeks page (scrollbar) starting with relevant weeks and  having the ability to scroll through weeks
 
 ### Version 0.1.5
 - *REMOVED* Retroactive betting data updated function
