@@ -22,7 +22,7 @@ function List({items=[],children = [], variant}) {
 
 export default List
 const StyledUnorderedList = styled.ul`
-	padding: 16px;
+	padding: 0px;
 	list-style-type: none;
 	display: flex;
 	align-items: center;

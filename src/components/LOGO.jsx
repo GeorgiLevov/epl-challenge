@@ -9,20 +9,33 @@ import eplLogoSvg from '../assets/premier-league-lion.svg'
 import eplBackgroundSvg from '../assets/epl_background.svg'
 import Picture from './Picture';
 import { COLORS } from '../Tools/CONSTANTS';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 
 const Logo = () => {
 
+	
 	return (
-		// <StyledLogo source1x={epl_logo_1x} source2x={epl_logo_2x} source3x={epl_logo_3x} />
-		<StyledLogo source1x={eplLogoSvg} />
+		// <StyledLogo source1x={epl_logo_1x} source2x={epl_logo_2x} source3x={epl_logo_3x} />	
+
+			<StyledLink to="/">
+				<StyledLogo source1x={eplLogoSvg} />
+			</StyledLink>
 	)
 }
 export default Logo;
 
+const StyledLink = styled(Link)`
+  width: 100%;
+	display: contents;
+	margin: 0px;
+	padding: 0px;
+	`
+
 const StyledLogo = styled(Picture)`
-	display: block;
 	max-height: 30vh;
-	margin-bottom: 20px;
+	margin-bottom: 20px; 
 	background-image: url(${eplBackgroundSvg});
 	background-size: 112.5% 112.5%;
 	background-repeat: no-repeat;

@@ -82,16 +82,16 @@
 		{"id":"60","home":"Sheffield United" , "homeScore":"0" , "away":"Newcastle United" , "awayScore":"8"}
 	],
 	"Matchweek 7": [
-		 {"votebyDate": "10/01/2023"},
-		 {"id":"61","home":"Aston Villa" , "homeScore":"" , "away":"Brighton" , "awayScore":""},
-		 {"id":"62","home":"Bournemouth" , "homeScore":"" , "away":"Arsenal" , "awayScore":""},
-		{"id":"63","home":"Everton" , "homeScore":"" , "away":"Luton Town" , "awayScore":""},
-		{"id":"64","home":"Manchester United" , "homeScore":"" , "away":"Crystal Palace" , "awayScore":""},
-		{"id":"65","home":"Newcastle United" , "homeScore":"" , "away":"Burnley" , "awayScore":""},
-		{"id":"66","home":"West Ham" , "homeScore":"" , "away":"Sheffield United" , "awayScore":""},
-		{"id":"67","home":"Wolves" , "homeScore":"" , "away":"Manchester City" , "awayScore":""},
-		{"id":"68","home":"Tottenham" , "homeScore":"" , "away":"Liverpool" , "awayScore":""},
-		{"id":"69","home":"Nottingham Forest" , "homeScore":"" , "away":"Brentford" , "awayScore":""},
+		{"votebyDate": "09/29/2023"},
+		{"id":"61","home":"Aston Villa" , "homeScore":"6" , "away":"Brighton" , "awayScore":"1"},
+		{"id":"62","home":"Bournemouth" , "homeScore":"0" , "away":"Arsenal" , "awayScore":"4"},
+		{"id":"63","home":"Everton" , "homeScore":"1" , "away":"Luton Town" , "awayScore":"2"},
+		{"id":"64","home":"Manchester United" , "homeScore":"0" , "away":"Crystal Palace" , "awayScore":"1"},
+		{"id":"65","home":"Newcastle United" , "homeScore":"2" , "away":"Burnley" , "awayScore":"0"},
+		{"id":"66","home":"West Ham" , "homeScore":"2" , "away":"Sheffield United" , "awayScore":"0"},
+		{"id":"67","home":"Wolves" , "homeScore":"2" , "away":"Manchester City" , "awayScore":"1"},
+		{"id":"68","home":"Tottenham" , "homeScore":"2" , "away":"Liverpool" , "awayScore":"1"},
+		{"id":"69","home":"Nottingham Forest" , "homeScore":"1" , "away":"Brentford" , "awayScore":"1"},
 		{"id":"70","home":"Fulham" , "homeScore":"" , "away":"Chelsea" , "awayScore":""}
 	],
 	

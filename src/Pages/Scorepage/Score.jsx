@@ -7,8 +7,6 @@ import { getUserObject } from "../../Functions/userFunctions";
 
 import GoBack from "../../components/GoBackBtn";
 import List from "../../components/List";
-import PageWrapper from "../../components/PageWrapper";
-// import Team from "../../components/Team";
 import { COLORS } from "../../Tools/CONSTANTS";
 import GameBetPointer from "../../components/GameBetPointer";
 import Button from "../../components/Button";
@@ -47,7 +45,7 @@ const Score = () => {
 	const lastGamesCount = 10;
 
 	return (
-		<PageWrapper>
+		<>
 			<ScoreWrapper>
 				<h1>Total Score</h1>
 				<StyledScore>{finalScore}</StyledScore>
@@ -74,7 +72,7 @@ const Score = () => {
 		</>
 				}
 		<GoBack/>
-		</PageWrapper>
+		</>
 	)
 }
 

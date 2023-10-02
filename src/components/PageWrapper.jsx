@@ -2,25 +2,32 @@
 import styled from "styled-components"
 import backgroundLight from "../assets/alternating-arrowhead-main-background.svg"
 import { COLORS } from "../Tools/CONSTANTS";
+import { motion,  } from "framer-motion";
 
 const PageWrapper = ({children}) => {
 
-	return <StyledWrapper>{children}</StyledWrapper>
-}
+	return <StyledWrapper 		
+		initial={{ backgroundPositionX: "0px", backgroundPositionY: "161px" }}
+		animate={{ backgroundPositionX: "161px", backgroundPositionY: "0px"  }}
+		transition={{ ease: "linear", duration: 16, repeat: Infinity	}} >
+							{children}
+					</StyledWrapper>
+	}
 
 export default PageWrapper;
 
-const StyledWrapper = styled.div`
-		padding: 8px;
-    min-height: 100dvh;
-    background-repeat: repeat;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-		z-index: 2;
+const StyledWrapper = styled(motion.div)`
+padding: 8px;
+min-height: 100dvh;
+background-repeat: repeat;
 
-		background-color: ${COLORS.offwhite};
-		background-image: url(${backgroundLight});
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-items: center;
+z-index: 2;
+
+background-color: ${COLORS.offwhite};
+background-image: url(${backgroundLight});
 `

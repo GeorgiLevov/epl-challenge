@@ -8,7 +8,6 @@ import GoBack from "../../components/GoBackBtn";
 
 import { getAllGames } from "../../Functions/gameFunctions";
 import "./GameVote.css"
-import PageWrapper from "../../components/PageWrapper";
 
 const GameVote = () => {
 	const {id} = useParams();
@@ -48,7 +47,7 @@ const GameVote = () => {
 	}
 
 return (
-	<PageWrapper>
+	<>
 	{ game && 
     (<div className="bet-container">
 			{disableBetting ? <button disabled>Bet on {game.home}</button> : <button onClick={()=>handleVote("+1")}>Bet on {game.home}</button> } 
@@ -57,7 +56,7 @@ return (
 		</div>)
 	}
 	<GoBack/>	
-	</PageWrapper>
+	</>
 )
 }
 

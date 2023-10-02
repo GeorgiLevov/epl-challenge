@@ -5,7 +5,6 @@ import WeeksObject from "../../assets/games_by_week.json"
 import { canStillBet } from "../../Functions/gameFunctions";
 import GoBack from "../../components/GoBackBtn";
 import styled from "styled-components/macro";
-import PageWrapper from "../../components/PageWrapper";
 import { COLORS, SHADOWS, QUERIES } from "../../Tools/CONSTANTS";
 
 const Matches = () => {
@@ -18,7 +17,7 @@ const Matches = () => {
 
 	return (
 <>
-		<PageWrapper>
+		<>
 			<h1 style={{marginBottom:"20px"}}>Matchweek {id}</h1>
 			<h2 style={{marginBottom:"20px"}}>last betting day: {votebyDate}</h2>
 			{
@@ -50,7 +49,7 @@ const Matches = () => {
 			}		
 
 		<GoBack/>
-		</PageWrapper>
+		</>
 		</>
 	)
 }

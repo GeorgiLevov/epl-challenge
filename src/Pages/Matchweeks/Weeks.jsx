@@ -6,8 +6,6 @@ import List from "../../components/List";
 import WeeksObject from "../../assets/games_by_week.json"
 import GoBack from "../../components/GoBackBtn";
 
-import PageWrapper from "../../components/PageWrapper";
-
 const Weeks = () => {
 
 	const weeksNames = Object.keys(WeeksObject);
@@ -25,11 +23,11 @@ const Weeks = () => {
 
 
 	return (
-		<PageWrapper>
-			<Logo/>
+		<>
+			<Logo />
 			<List items={matchweekLinks} />
 			<GoBack/>
-		</PageWrapper>
+		</>
 	)
 }
 export default Weeks;

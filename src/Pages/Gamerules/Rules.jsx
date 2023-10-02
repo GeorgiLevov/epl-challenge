@@ -3,11 +3,10 @@ import styled from "styled-components";
 import { COLORS } from "../../Tools/CONSTANTS";
 import GoBack from "../../components/GoBackBtn";
 import Logo from "../../components/LOGO";
-import PageWrapper from "../../components/PageWrapper";
 
 const Rules = () => {
 	return (
-		<PageWrapper>
+		<>
 		<Logo/>
 		<h1>Game Rules</h1>
 		<RuleHeader >
@@ -21,7 +20,7 @@ const Rules = () => {
 
 		<GoBack/>
 		<br/><br/>
-		</PageWrapper>
+		</>
 	)
 }
 
