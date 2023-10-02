@@ -3,8 +3,8 @@ import { getGameScoreFormatted} from "./gameFunctions";
 
 
 const setEncryption = false;
-const userStorageKey = import.meta.env.EPL__USER_KEY;
-const backupStorageKey = import.meta.env.EPL__BACKUP;
+const userStorageKey = "user-epl-stats";
+const backupStorageKey = "backup-epl-stats";
 const adminPASS = import.meta.env.EPL__ADMIN_PASS;
 
 const initiateUserObject = (username)=> {return {username: username, score:'0', bethistory:[]}	}
