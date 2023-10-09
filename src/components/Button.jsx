@@ -27,7 +27,7 @@ const SIZES = {
 
 const Button = ({ variant , size , children, onClick=()=>{return;}})=> {
 	const styles = SIZES[size];
-	
+
 	let StyledComponent;
   if (variant === "fill") {
     StyledComponent = FillButton;
@@ -40,8 +40,7 @@ const Button = ({ variant , size , children, onClick=()=>{return;}})=> {
   } else {
 		throw new Error(`Unrecognized Button variant: ${variant}`);
   }
-	
-	
+
 	return <StyledComponent role="button" style={styles} onClick={()=> onClick()}>{children}</StyledComponent>;
 }	
 
@@ -51,7 +50,7 @@ const ButtonBase = styled.button`
   font-family: "Roboto", sans-serif;
   font-size: var(--fontSize);
   font-weight: 600;
-	
+
   position: relative;
 	display: inline-flex;
   justify-content: center;
@@ -64,7 +63,7 @@ const ButtonBase = styled.button`
   vertical-align: baseline;
   border: 2px solid transparent;
   border-radius: var(--borderRadius);
-  
+
   cursor: pointer;
   user-select: none;
   text-decoration: none;
@@ -78,18 +77,16 @@ const ButtonBase = styled.button`
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	
+
 	  &:hover,
 		&:focus {
 			box-shadow: ${SHADOWS.boxshadowLight};
 			outline-color: ${COLORS.primary};
 			outline-offset: 4px;
-
 		}
 	  &:hover {
 			transform: translateY(-1px);
 		}
-		
 	  &:active {
 			border-color: ${COLORS.primary};
 			transform: translateY(0);
@@ -104,7 +101,8 @@ const FillButton = styled(ButtonBase)`
     background-color: ${COLORS.primaryLight};
   }
 `;
-export const OutlineButton = styled(ButtonBase)`
+
+const OutlineButton = styled(ButtonBase)`
   background-color: ${COLORS.white};
   color: ${COLORS.primary};
   border: 2px solid currentColor;
@@ -147,9 +145,10 @@ const BackButton = styled(ButtonBase)`
 	outline-offset: 6px;
 	
 	@media ${QUERIES.tabletAndUp} {
-    width: 96px;
+		width: 96px;
 		height: 96px;
 		bottom: 32px;
+		margin: 48px 0px 16px 0px;
   }
 
 	&:hover,
@@ -163,8 +162,6 @@ const BackButton = styled(ButtonBase)`
 	&:active {
 		border-color: ${COLORS.primaryLight};
 	}
-  
-
 `
 
 

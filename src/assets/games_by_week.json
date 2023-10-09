@@ -97,16 +97,16 @@
 	
 	"Matchweek 8": [
 		{"votebyDate": "10/06/2023"},
-		{"id":"71","home":"Luton Town" , "homeScore":"" , "away":"Tottenham" , "awayScore":""},
-		{"id":"72","home":"Burnley" , "homeScore":"" , "away":"Chelsea" , "awayScore":""},
-		{"id":"73","home":"Everton" , "homeScore":"" , "away":"Bournemouth" , "awayScore":""},
-		{"id":"74","home":"Fulham" , "homeScore":"" , "away":"Sheffield United" , "awayScore":""},
-		{"id":"75","home":"Manchester United" , "homeScore":"" , "away":"Brentford" , "awayScore":""},
-		{"id":"76","home":"Wolves" , "homeScore":"" , "away":"Aston Villa" , "awayScore":""},
-		{"id":"77","home":"Crystal Palace" , "homeScore":"" , "away":"Nottingham Forest" , "awayScore":""},
-		{"id":"78","home":"Brighton" , "homeScore":"" , "away":"Liverpool" , "awayScore":""},
-		{"id":"79","home":"West Ham" , "homeScore":"" , "away":"Newcastle United" , "awayScore":""},
-		{"id":"80","home":"Arsenal" , "homeScore":"" , "away":"Manchester City" , "awayScore":""}
+		{"id":"71","home":"Luton Town" , "homeScore":"0" , "away":"Tottenham" , "awayScore":"1"},
+		{"id":"72","home":"Burnley" , "homeScore":"1" , "away":"Chelsea" , "awayScore":"4"},
+		{"id":"73","home":"Everton" , "homeScore":"3" , "away":"Bournemouth" , "awayScore":"0"},
+		{"id":"74","home":"Fulham" , "homeScore":"3" , "away":"Sheffield United" , "awayScore":"1"},
+		{"id":"75","home":"Manchester United" , "homeScore":"2" , "away":"Brentford" , "awayScore":"1"},
+		{"id":"76","home":"Wolves" , "homeScore":"1" , "away":"Aston Villa" , "awayScore":"1"},
+		{"id":"77","home":"Crystal Palace" , "homeScore":"0" , "away":"Nottingham Forest" , "awayScore":"0"},
+		{"id":"78","home":"Brighton" , "homeScore":"2" , "away":"Liverpool" , "awayScore":"2"},
+		{"id":"79","home":"West Ham" , "homeScore":"2" , "away":"Newcastle United" , "awayScore":"2"},
+		{"id":"80","home":"Arsenal" , "homeScore":"1" , "away":"Manchester City" , "awayScore":"0"}
 	],
 	
 	"Matchweek 9": [
