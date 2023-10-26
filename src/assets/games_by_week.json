@@ -120,7 +120,7 @@
 		{"id":"87","home":"Chelsea" , "homeScore":"2" , "away":"Arsenal" , "awayScore":"2"},
 		{"id":"88","home":"Sheffield United" , "homeScore":"1" , "away":"Manchester United" , "awayScore":"2"},
 		{"id":"89","home":"Aston Villa" , "homeScore":"4" , "away":"West Ham" , "awayScore":"1"},
-		{"id":"90","home":"Tottenham" , "homeScore":"" , "away":"Fulham" , "awayScore":""}
+		{"id":"90","home":"Tottenham" , "homeScore":"2" , "away":"Fulham" , "awayScore":"0"}
 	],
 	
 	"Matchweek 10": [
