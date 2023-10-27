@@ -49,7 +49,9 @@ const Home = () => {
 			<Logo />
 			<StyledGreeting>{currentGreeting} {user.username}</StyledGreeting>
 			<List items={links}/> 
-
+			{user.score == "35" && 
+				<Button variant="fill" size="large" onClick={handleBonusPoints}>Get 8 points</Button>
+			}
 			</>
 		:<>
 			<h2>Please Sign up to play below</h2>
@@ -69,14 +71,12 @@ export default Home;
 const StyledGreeting = styled.h1`
 	font-size: 2.75rem;
 	margin: 20px;
-
-
+`
 
 /* OLD CODE - ONE TIME USES */
-	// const handleBonusPoints = () => {
-// 	// giving unfortunate players a boost
-// 	if (user.score < 10) {
-// 		addPointToUserScore(10);
-// 	}
-// }
-`
+	const handleBonusPoints = () => {
+	// giving unfortunate players a boost
+	if (user.score == 35) {
+		addPointToUserScore(8);
+	}
+}
