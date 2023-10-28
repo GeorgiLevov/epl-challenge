@@ -66,6 +66,11 @@ export const updateUserBets = (newBetHistory) => {
 	user.bethistory = newBetHistory;
 	ls.set(userStorageKey, user, { encrypt: setEncryption });
 };
+export const setUserScore = (points) => {
+	const user = getUserObject();
+	user.score = points;
+	ls.set(userStorageKey, user, { encrypt: setEncryption });
+};
 
 export const checkIfAdmin = (password) => {
 	const user = getUserObject();

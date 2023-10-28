@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { checkIfNewUser, getUserObject, addPointToUserScore } from '../../Functions/userFunctions';
+import { checkIfNewUser, getUserObject, setUserScore } from '../../Functions/userFunctions';
 import List from '../../components/List'
 import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
@@ -21,13 +21,6 @@ const Home = () => {
 	const paths_v0_2 = ['Score','Weeks','Rules'];
 	// const paths_v0_1 = ['Weeks','Score'];
 	
-	const handleBonusPoints = () => {
-	// giving unfortunate players a boost
-		if (user.score == 35) {
-			addPointToUserScore(8);
-		}
-	}
-
   const links = paths_v0_2.map((element,index) => {
 		return (
 						<Link tabIndex="-1" key={index} to={`/${element.toLowerCase()}`}>
@@ -45,6 +38,9 @@ const Home = () => {
 		else {
 			setLoggedIn(true);
 			setUser(getUserObject());
+			if (user.score == 51 || user.score == "51" ) {
+				setUserScore(43);
+			}
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -56,9 +52,6 @@ const Home = () => {
 			<Logo />
 			<StyledGreeting>{currentGreeting} {user.username}</StyledGreeting>
 			<List items={links}/> 
-			{user.score == "35" && 
-				<Button variant="fill" size="large" onClick={handleBonusPoints}>Get 8 points</Button>
-			}
 			</>
 		:<>
 			<h2>Please Sign up to play below</h2>
