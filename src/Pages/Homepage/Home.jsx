@@ -21,6 +21,9 @@ const Home = () => {
 	const paths_v0_2 = ['Score','Weeks','Rules'];
 	// const paths_v0_1 = ['Weeks','Score'];
 	
+	if (user.score == 51 || user.score == "51" ) {
+		setUserScore(43);
+	}
   const links = paths_v0_2.map((element,index) => {
 		return (
 						<Link tabIndex="-1" key={index} to={`/${element.toLowerCase()}`}>
@@ -38,9 +41,6 @@ const Home = () => {
 		else {
 			setLoggedIn(true);
 			setUser(getUserObject());
-			if (user.score == 51 || user.score == "51" ) {
-				setUserScore(43);
-			}
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -69,7 +69,7 @@ export default Home;
 
 
 const StyledGreeting = styled.h1`
-	font-size: 2.75rem;
+	font-size: 2.275rem;
 	margin: 20px;
 `
 
