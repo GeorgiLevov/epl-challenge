@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { checkIfNewUser, getUserObject } from '../../Functions/userFunctions';
+import { checkIfNewUser, getUserObject, addPointToUserScore } from '../../Functions/userFunctions';
 import List from '../../components/List'
 import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
@@ -20,6 +20,13 @@ const Home = () => {
 	// const paths_v0_3 = ['Score','Weeks','Rules','Teams'];
 	const paths_v0_2 = ['Score','Weeks','Rules'];
 	// const paths_v0_1 = ['Weeks','Score'];
+	
+	const handleBonusPoints = () => {
+	// giving unfortunate players a boost
+		if (user.score == 35) {
+			addPointToUserScore(8);
+		}
+	}
 
   const links = paths_v0_2.map((element,index) => {
 		return (
@@ -74,9 +81,3 @@ const StyledGreeting = styled.h1`
 `
 
 /* OLD CODE - ONE TIME USES */
-	const handleBonusPoints = () => {
-	// giving unfortunate players a boost
-	if (user.score == 35) {
-		addPointToUserScore(8);
-	}
-}
