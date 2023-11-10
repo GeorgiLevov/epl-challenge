@@ -138,7 +138,7 @@
 	],
 	
 	"Matchweek 11": [
-		{"votebyDate": "11/05/2023"},
+		{"votebyDate": "11/11/2023"},
 		{"id":"101","home":"Brentford" , "homeScore":"3" , "away":"West Ham" , "awayScore":"2"},
 		{"id":"102","home":"Burnley" , "homeScore":"0" , "away":"Crystal Palace" , "awayScore":"2"},
 		{"id":"103","home":"Everton" , "homeScore":"1" , "away":"Brighton" , "awayScore":"1"},
@@ -152,7 +152,7 @@
 	],
 	
 	"Matchweek 12": [
-		{"votebyDate": "11/10/2023"},
+		{"votebyDate": "11/11/2023"},
 		{"id":"111","home":"Bournemouth" , "homeScore":"" , "away":"Newcastle United" , "awayScore":""},
 		{"id":"112","home":"Arsenal" , "homeScore":"" , "away":"Burnley" , "awayScore":""},
 		{"id":"113","home":"Aston Villa" , "homeScore":"" , "away":"Fulham" , "awayScore":""},
