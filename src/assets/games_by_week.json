@@ -139,16 +139,16 @@
 	
 	"Matchweek 11": [
 		{"votebyDate": "11/05/2023"},
-		{"id":"101","home":"Brentford" , "homeScore":"" , "away":"West Ham" , "awayScore":""},
-		{"id":"102","home":"Burnley" , "homeScore":"" , "away":"Crystal Palace" , "awayScore":""},
-		{"id":"103","home":"Everton" , "homeScore":"" , "away":"Brighton" , "awayScore":""},
-		{"id":"104","home":"Fulham" , "homeScore":"" , "away":"Manchester United" , "awayScore":""},
-		{"id":"105","home":"Luton Town" , "homeScore":"" , "away":"Liverpool" , "awayScore":""},
-		{"id":"106","home":"Manchester City" , "homeScore":"" , "away":"Bournemouth" , "awayScore":""},
-		{"id":"107","home":"Newcastle United" , "homeScore":"" , "away":"Arsenal" , "awayScore":""},
-		{"id":"108","home":"Nottingham Forest" , "homeScore":"" , "away":"Aston Villa" , "awayScore":""},
-		{"id":"109","home":"Sheffield United" , "homeScore":"" , "away":"Wolves" , "awayScore":""},
-		{"id":"110","home":"Tottenham" , "homeScore":"" , "away":"Chelsea" , "awayScore":""}
+		{"id":"101","home":"Brentford" , "homeScore":"3" , "away":"West Ham" , "awayScore":"2"},
+		{"id":"102","home":"Burnley" , "homeScore":"0" , "away":"Crystal Palace" , "awayScore":"2"},
+		{"id":"103","home":"Everton" , "homeScore":"1" , "away":"Brighton" , "awayScore":"1"},
+		{"id":"104","home":"Fulham" , "homeScore":"0" , "away":"Manchester United" , "awayScore":"1"},
+		{"id":"105","home":"Luton Town" , "homeScore":"1" , "away":"Liverpool" , "awayScore":"1"},
+		{"id":"106","home":"Manchester City" , "homeScore":"6" , "away":"Bournemouth" , "awayScore":"1"},
+		{"id":"107","home":"Newcastle United" , "homeScore":"1" , "away":"Arsenal" , "awayScore":"0"},
+		{"id":"108","home":"Nottingham Forest" , "homeScore":"2" , "away":"Aston Villa" , "awayScore":"0"},
+		{"id":"109","home":"Sheffield United" , "homeScore":"2" , "away":"Wolves" , "awayScore":"1"},
+		{"id":"110","home":"Tottenham" , "homeScore":"1" , "away":"Chelsea" , "awayScore":"4"}
 	],
 	
 	"Matchweek 12": [
