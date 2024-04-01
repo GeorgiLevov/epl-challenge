@@ -17,4 +17,4 @@ export const storage = new Storage(client);
 // Hi Georgi,
 // thanks for registering for an API authentication token. Please modify your client to use a HTTP header named "X-Auth-Token" with the underneath personal token as value.
 
-// Your API token: ebeb538333fa447185d36966296ebfd2
+
