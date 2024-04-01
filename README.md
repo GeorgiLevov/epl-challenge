@@ -20,6 +20,11 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 
 ## Changelog
 
+### Version 0.2.0
+- ***Project revival Effort***
+- *(Actively Working on) Adding DB to store users
+- *(Actively Working on) Moving over to API based match information
+
 ### Version 0.1.7
 - General Backend Updates and code Refactoring
 - Created Data Snapshot for backup and debugging purposes
