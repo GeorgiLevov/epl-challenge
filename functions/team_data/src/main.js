@@ -1,35 +1,65 @@
-import { Client, Users } from 'node-appwrite';
+import { Client, Databases } from 'node-appwrite';
 
-// This Appwrite function will be executed every time your function is triggered
+const EPL_PROJECT_KEY = process.env.EPL_PROJECT_KEY || import.meta.env.EPL_PROJECT_KEY;
+const EPL_DATABASE_KEY = process.env.EPL_DATABASE_KEY || import.meta.env.EPL_DATABASE_KEY;
+const EPL_TEAMS_COLLECTION = process.env.EPL_API_TEAMS_COLLECTION || import.meta.env.EPL_API_TEAMS_COLLECTION;
+const EPL_STANDINGS_COLLECTION = process.env.EPL_STANDINGS_COLLECTION || import.meta.env.EPL_STANDINGS_COLLECTION;
+const EPL_API_TOKEN = process.env.EPL_API_TOKEN || import.meta.env.EPL_API_TOKEN;
+const EPL_TEAM_DATA_API_PATH = process.env.EPL_API_TEAMS_API_PATH || import.meta.env.EPL_API_TEAMS_API_PATH;
+
+
+async function getTEAMDATA() {
+    try {
+      const response = await fetch(EPL_TEAM_DATA_API_PATH, {
+        headers: {
+          "Content-Type": "application/json",
+          "X-Auth-Token": EPL_API_TOKEN,
+          "X-API-Version": "v4",
+        },
+      });
+  
+        const result = await response.json();
+        return result;
+    } catch (err) {
+        error(err);
+    }
+  }
+
 export default async ({ req, res, log, error }) => {
+
   // You can use the Appwrite SDK to interact with other services
   // For this example, we're using the Users service
-//   const client = new Client()
-//     .setEndpoint(process.env.APPWRITE_FUNCTION_API_ENDPOINT)
-//     .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
-//     .setKey(req.headers['x-appwrite-key'] ?? '');
-//   const users = new Users(client);
+  const client = new Client();
+  client
+  .setEndpoint('https://cloud.appwrite.io/v1')
+  .setProject(EPL_PROJECT_KEY);
 
-//   try {
-//     const response = await users.list();
-//     // Log messages and errors to the Appwrite Console
-//     // These logs won't be seen by your end users
-//     log(`Total users: ${response.total}`);
-//   } catch(err) {
-//     error("Could not list users: " + err.message);
-//   }
+  const db = new Databases(client);
 
-//   // The req object contains the request data
-//   if (req.path === "/ping") {
-//     // Use res object to respond with text(), json(), or binary()
-//     // Don't forget to return a response!
-    return res.text("Yo, you called?");
-//   }
+  const response = await db.listDocuments(
+      EPL_DATABASE_KEY,
+      EPL_TEAMS_COLLECTION
+  )
 
-  return res.json({
-    motto: "Build like a team of hundreds_",
-    learn: "https://appwrite.io/docs",
-    connect: "https://appwrite.io/discord",
-    getInspired: "https://builtwith.appwrite.io",
-  });
+  const teamData = await getTEAMDATA();
+
+  if (response.documents.length  > 0) {
+      const updateTeamsData = db.updateDocument(
+          EPL_DATABASE_KEY, 
+          EPL_TEAMS_COLLECTION, 
+          "data", 
+          JSON.stringify(teamData)
+      );
+
+      updateTeamsData.then(function (response) {
+            log("Teams Data Updated!");
+            log(JSON.stringify(response));
+            console.log("Success  - data was updated");  
+        }, function (err) {
+            console.log("Failure - data was not updated"); 
+            err(error);
+        });
+    }
+
+    return res.send(`Teams data Updated!`);
 };
