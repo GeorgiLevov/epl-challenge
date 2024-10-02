@@ -1,11 +1,11 @@
 import { Client, Databases } from 'node-appwrite';
 
-const EPL_PROJECT_KEY = process.env.EPL_PROJECT_KEY || import.meta.env.EPL_PROJECT_KEY;
-const EPL_DATABASE_KEY = process.env.EPL_DATABASE_KEY || import.meta.env.EPL_DATABASE_KEY;
-const EPL_TEAMS_COLLECTION = process.env.EPL_API_TEAMS_COLLECTION || import.meta.env.EPL_API_TEAMS_COLLECTION;
-const EPL_STANDINGS_COLLECTION = process.env.EPL_STANDINGS_COLLECTION || import.meta.env.EPL_STANDINGS_COLLECTION;
-const EPL_API_TOKEN = process.env.EPL_API_TOKEN || import.meta.env.EPL_API_TOKEN;
-const EPL_TEAM_DATA_API_PATH = process.env.EPL_API_TEAMS_API_PATH || import.meta.env.EPL_API_TEAMS_API_PATH;
+// const EPL_PROJECT_KEY = process.env.EPL_PROJECT_KEY || import.meta.env.EPL_PROJECT_KEY;
+// const EPL_DATABASE_KEY = process.env.EPL_DATABASE_KEY || import.meta.env.EPL_DATABASE_KEY;
+// const EPL_TEAMS_COLLECTION = process.env.EPL_API_TEAMS_COLLECTION || import.meta.env.EPL_API_TEAMS_COLLECTION;
+// const EPL_STANDINGS_COLLECTION = process.env.EPL_STANDINGS_COLLECTION || import.meta.env.EPL_STANDINGS_COLLECTION;
+// const EPL_API_TOKEN = process.env.EPL_API_TOKEN || import.meta.env.EPL_API_TOKEN;
+// const EPL_TEAM_DATA_API_PATH = process.env.EPL_API_TEAMS_API_PATH || import.meta.env.EPL_API_TEAMS_API_PATH;
 
 
 async function getTEAMDATA() {
