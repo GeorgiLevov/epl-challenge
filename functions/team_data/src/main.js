@@ -37,34 +37,24 @@ export default async ({ req, res, log, error }) => {
 
   const db = new Databases(client);
 
-  const response = await db.listDocuments(
-      EPL_DATABASE_KEY,
-      EPL_TEAMS_COLLECTION
-  )
-
   const teamData = await getTEAMDATA();
-  log("team data outside:",teamData);
 
   if (Object.keys(teamData).length > 0) {
-    log("response:",response);
-    log("team data inside:",teamData);
+
       const updateTeamsData = db.updateDocument(
-        
           EPL_DATABASE_KEY, 
           EPL_TEAMS_COLLECTION, 
           "data", 
-          JSON.stringify(teamData)
+          teamData
       );
 
       updateTeamsData.then(function (response) {
             log("Teams Data Updated!");
-            log(JSON.stringify(response));
             context.log("Success  - data was updated");  
         }, function (err) {
             context.log("Failure - data was not updated"); 
             err(error);
         });
     }
-
-    return res.send(`Teams data Updated222!`);
+    return res.send(`Teams data Updated!`);
 };
