@@ -20,10 +20,21 @@ Check it out now, at: [epl-challenge.netlify.app](https://epl-challenge.netlify.
 
 ## Changelog
 
-### Version 0.2.0
+### Version 0.2.0 GOALS
+- Working User Accounts, easy authentication
+- Refactored User Data model routing to backend instead of encrypted local-storage
+- Views to remain functional yet updated based on new async capabilities
+
+- Future functionality to be implemented one step at a a time
+
+### Version 0.1.9
 - ***Project revival Effort***
-- *(Actively Working on) Adding DB to store users
-- *(Actively Working on) Moving over to API based match information
+- Picked the most reasonable DB and created Database for project
+- Created collections to store user and football data
+- Created Serverless functions to re-hydrate database with newest FOOTBALL DATA from online API
+
+- *Not Started* User Login
+- *Not Started* Code refactor for async data loading
 
 ### Version 0.1.7
 - General Backend Updates and code Refactoring
