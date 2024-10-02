@@ -21,6 +21,7 @@ async function getTEAMDATA() {
         const result = await response.json();
         return result;
     } catch (err) {
+        console.log(err);
         error(err);
     }
   }
@@ -43,8 +44,13 @@ export default async ({ req, res, log, error }) => {
 
   const teamData = await getTEAMDATA();
 
+  console.log(response)
+  console.log(response.documents)
   if (response.documents.length  > 0) {
+      console.log("response:",response);
+      console.log("response.documents:",response.documents);
       const updateTeamsData = db.updateDocument(
+        
           EPL_DATABASE_KEY, 
           EPL_TEAMS_COLLECTION, 
           "data", 
