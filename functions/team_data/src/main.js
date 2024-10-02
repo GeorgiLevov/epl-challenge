@@ -41,11 +41,17 @@ export default async ({ req, res, log, error }) => {
 
   if (Object.keys(teamData).length > 0) {
 
-      const updateTeamsData = db.updateDocument(
+      log("EPL_DATABASE_KEY:",EPL_DATABASE_KEY);
+      log("EPL_TEAMS_COLLECTION:",EPL_TEAMS_COLLECTION);
+    log("team data type:",typeof teamData);
+    log("team data inside:",teamData);
+    
+    const updateTeamsData = db.updateDocument(
           EPL_DATABASE_KEY, 
           EPL_TEAMS_COLLECTION, 
           "data", 
-          teamData
+          { ...JSON.stringify(teamData) }
+          
       );
 
       updateTeamsData.then(function (response) {
