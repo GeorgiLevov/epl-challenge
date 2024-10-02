@@ -21,7 +21,7 @@ async function getTEAMDATA() {
         const result = await response.json();
         return result;
     } catch (err) {
-        console.log(err);
+        context.log(err);
         error(err);
     }
   }
@@ -50,12 +50,11 @@ export default async ({ req, res, log, error }) => {
   )
 
   const teamData = await getTEAMDATA();
+  context.log("team data:",teamData);
 
-  console.log(response)
-  console.log(response.documents)
-  if (response.documents.length  > 0) {
-      console.log("response:",response);
-      console.log("response.documents:",response.documents);
+  if (Object.keys(teamData).length > 0) {
+    context.log("response:",response);
+    context.log("team data inside:",teamData);
       const updateTeamsData = db.updateDocument(
         
           EPL_DATABASE_KEY, 
@@ -67,9 +66,9 @@ export default async ({ req, res, log, error }) => {
       updateTeamsData.then(function (response) {
             log("Teams Data Updated!");
             log(JSON.stringify(response));
-            console.log("Success  - data was updated");  
+            context.log("Success  - data was updated");  
         }, function (err) {
-            console.log("Failure - data was not updated"); 
+            context.log("Failure - data was not updated"); 
             err(error);
         });
     }
