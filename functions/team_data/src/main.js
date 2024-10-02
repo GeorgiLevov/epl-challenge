@@ -50,7 +50,7 @@ export default async ({ req, res, log, error }) => {
           EPL_DATABASE_KEY, 
           EPL_TEAMS_COLLECTION, 
           "data", 
-          { ...JSON.stringify(teamData) }
+          { data: JSON.stringify(teamData) }
           
       );
 
