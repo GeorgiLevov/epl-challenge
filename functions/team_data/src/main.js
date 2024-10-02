@@ -28,13 +28,6 @@ async function getTEAMDATA() {
 
 export default async ({ req, res, log, error }) => {
 
-    log("EPL_PROJECT_KEY:",EPL_PROJECT_KEY)
-    log("EPL_DATABASE_KEY:",EPL_DATABASE_KEY)
-    log("EPL_TEAMS_COLLECTION:",EPL_TEAMS_COLLECTION)
-    log("EPL_STANDINGS_COLLECTION:",EPL_STANDINGS_COLLECTION)
-    log("EPL_API_TOKEN:",EPL_API_TOKEN)
-    log("EPL_TEAM_DATA_API_PATH:",EPL_TEAM_DATA_API_PATH)
-
   // You can use the Appwrite SDK to interact with other services
   // For this example, we're using the Users service
   const client = new Client();
@@ -50,11 +43,11 @@ export default async ({ req, res, log, error }) => {
   )
 
   const teamData = await getTEAMDATA();
-  context.log("team data:",teamData);
+  log("team data outside:",teamData);
 
   if (Object.keys(teamData).length > 0) {
-    context.log("response:",response);
-    context.log("team data inside:",teamData);
+    log("response:",response);
+    log("team data inside:",teamData);
       const updateTeamsData = db.updateDocument(
         
           EPL_DATABASE_KEY, 
