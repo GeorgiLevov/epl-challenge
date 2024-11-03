@@ -1,10 +1,10 @@
 import { Client, Databases, Account, Storage, Avatars } from "appwrite";
-
+import { PROJECT_CONFIG } from "./api.config";
 const client = new Client();
 
 client
   .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject(import.meta.env.EPL_API_PROJECT_KEY);
+  .setProject(PROJECT_CONFIG.EPL_PROJECT_KEY);
 
 export const account = new Account(client);
 export const databases = new Databases(client);
