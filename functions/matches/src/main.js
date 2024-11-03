@@ -1,18 +1,13 @@
 import { Client, Databases } from 'node-appwrite';
-
-const EPL_PROJECT_KEY = process.env.EPL_PROJECT_KEY || import.meta.env.EPL_PROJECT_KEY;
-const EPL_DATABASE_KEY = process.env.EPL_API_DATABASE_KEY || import.meta.env.EPL_API_DATABASE_KEY;
-const EPL_MATCHES_COLLECTION = process.env.EPL_API_MATCHES_COLLECTION || import.meta.env.EPL_API_MATCHES_COLLECTION;
-const EPL_API_TOKEN = process.env.EPL_API_TOKEN || import.meta.env.EPL_API_TOKEN;
-const EPL_API_MATCHES_API_PATH = process.env.EPL_API_MATCHES_API_PATH || import.meta.env.EPL_API_MATCHES_API_PATH;
+import { PROJECT_CONFIG, API_CONFIG, COLLECTIONS_CONFIG } from '../../../db/api.config';
 
 
 async function getMATCHES() {
     try {
-      const response = await fetch(EPL_API_MATCHES_API_PATH, {
+      const response = await fetch(API_CONFIG.EPL_API_MATCHES_PATH, {
         headers: {
           "Content-Type": "application/json",
-          "X-Auth-Token": EPL_API_TOKEN,
+          "X-Auth-Token": API_CONFIG.EPL_API_KEY,
           "X-API-Version": "v4",
         },
       });
@@ -32,7 +27,7 @@ export default async ({ req, res, log, error }) => {
   const client = new Client();
   client
   .setEndpoint('https://cloud.appwrite.io/v1')
-  .setProject(EPL_PROJECT_KEY);
+  .setProject(PROJECT_CONFIG.EPL_PROJECT_KEY);
 
   const db = new Databases(client);
 
@@ -41,10 +36,10 @@ export default async ({ req, res, log, error }) => {
   if (Object.keys(matchesData).length > 0) {
     
     const updateMatchesData = db.updateDocument(
-          EPL_DATABASE_KEY, 
-          EPL_MATCHES_COLLECTION, 
-          "data", 
-          { data: JSON.stringify(matchesData) }
+        PROJECT_CONFIG.EPL_PROJECT_DATABASE_KEY, 
+        COLLECTIONS_CONFIG.EPL_PROJECT_MATCHES_COLLECTION, 
+        "data", 
+        { data: JSON.stringify(matchesData) }
           
       );
 

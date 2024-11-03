@@ -1,18 +1,13 @@
 import { Client, Databases } from 'node-appwrite';
 
-const EPL_PROJECT_KEY = process.env.EPL_PROJECT_KEY || import.meta.env.EPL_PROJECT_KEY;
-const EPL_DATABASE_KEY = process.env.EPL_API_DATABASE_KEY || import.meta.env.EPL_API_DATABASE_KEY;
-const EPL_STANDINGS_COLLECTION = process.env.EPL_API_STANDINGS_COLLECTION || import.meta.env.EPL_API_STANDINGS_COLLECTION;
-const EPL_API_TOKEN = process.env.EPL_API_TOKEN || import.meta.env.EPL_API_TOKEN;
-const EPL_API_STANDINGS_PATH = process.env.EPL_API_STANDINGS_API_PATH || import.meta.env.EPL_API_STANDINGS_API_PATH;
-
+import { PROJECT_CONFIG, COLLECTIONS_CONFIG, API_CONFIG } from '../../../db/api.config';
 
 async function getSTANDINGS() {
     try {
-      const response = await fetch(EPL_API_STANDINGS_PATH, {
+      const response = await fetch(API_CONFIG.EPL_API_STANDINGS_PATH, {
         headers: {
           "Content-Type": "application/json",
-          "X-Auth-Token": EPL_API_TOKEN,
+          "X-Auth-Token": API_CONFIG.EPL_API_KEY,
           "X-API-Version": "v4",
         },
       });
@@ -32,7 +27,7 @@ export default async ({ req, res, log, error }) => {
   const client = new Client();
   client
   .setEndpoint('https://cloud.appwrite.io/v1')
-  .setProject(EPL_PROJECT_KEY);
+  .setProject(PROJECT_CONFIG.EPL_PROJECT_KEY);
 
   const db = new Databases(client);
 
@@ -41,14 +36,14 @@ export default async ({ req, res, log, error }) => {
   if (Object.keys(teamStandings).length > 0) {
     
     const updateStandingsData = db.updateDocument(
-          EPL_DATABASE_KEY, 
-          EPL_STANDINGS_COLLECTION, 
-          "data", 
-          { data: JSON.stringify(teamStandings) }
+        PROJECT_CONFIG.EPL_PROJECT_DATABASE_KEY, 
+        COLLECTIONS_CONFIG.EPL_PROJECT_STANDINGS_COLLECTION, 
+        "data", 
+        { data: JSON.stringify(teamStandings) }
           
       );
 
-      updateStandingsData.then(function (response) {
+        updateStandingsData.then(function (response) {
             log("Standings Data Updated!");
             context.log("Success  - data was updated");  
         }, function (err) {
