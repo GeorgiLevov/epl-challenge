@@ -1,5 +1,5 @@
 import { Client, Databases } from 'node-appwrite';
-import { PROJECT_CONFIG, COLLECTIONS_CONFIG, API_CONFIG } from '../../../db/api.config';
+import { PROJECT_CONFIG, COLLECTIONS_CONFIG, API_CONFIG } from '../../../db/api.config.js';
 
 
 async function getTEAMDATA() {

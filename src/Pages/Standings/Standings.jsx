@@ -2,12 +2,15 @@ import React from 'react';
 import { useFootballData } from '../../../db/context/footballData.context';
 
 function Standings() {
-    const {standings, getCurrentStandings} = useFootballData();
+
+    const {standings} = useFootballData();
 
 
 	React.useEffect(() => {
-        getCurrentStandings();
-	}, []);
+        console.log("standings:",standings);
+        console.log("matches:",matches);
+        console.log("teams:",teams);
+    },[standings,matches,teams])
 
 	return <div>{standings && standings.map((team,index)=>{
         console.log(team)

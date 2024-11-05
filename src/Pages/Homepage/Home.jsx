@@ -11,14 +11,13 @@ import Logo from '../../components/LOGO';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import styled from 'styled-components';
-import { useFootballData } from '../../../db/context/footballData.context';
+
 
 const Home = () => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [user, setUser] = useState({ username: 'Guest' });
     const navigate = useNavigate();
 
-    const {standings, matches, teams} = useFootballData();
 
 
     const greetings = [
@@ -55,12 +54,6 @@ const Home = () => {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    useEffect(()=> {
-        console.log("standings:",standings);
-        console.log("matches:",matches);
-        console.log("teams:",teams);
-    },[standings,matches,teams])
 
     return (
         <>
