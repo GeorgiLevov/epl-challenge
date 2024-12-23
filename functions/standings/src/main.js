@@ -1,19 +1,19 @@
 import { Client, Databases } from 'node-appwrite';
 
 const PROJECT_CONFIG = {
-    EPL_PROJECT_KEY: import.meta.env.EPL_PROJECT_KEY || process.env.EPL_PROJECT_KEY,
-    EPL_PROJECT_DATABASE_KEY: import.meta.env.EPL_PROJECT_DATABASE_KEY || process.env.EPL_PROJECT_DATABASE_KEY,
+    EPL_PROJECT_KEY: process.env.EPL_PROJECT_KEY,
+    EPL_PROJECT_DATABASE_KEY: process.env.EPL_PROJECT_DATABASE_KEY,
 };
 const API_CONFIG = {
-    EPL_API_KEY: import.meta.env.EPL_API_KEY || process.env.EPL_API_KEY,
-    EPL_API_TEAMS_PATH: import.meta.env.EPL_API_TEAMS_PATH || process.env.EPL_API_TEAMS_PATH,
-    EPL_API_STANDINGS_PATH: import.meta.env.EPL_API_STANDINGS_PATH || process.env.EPL_API_STANDINGS_PATH,
-    EPL_API_MATCHES_PATH: import.meta.env.EPL_API_MATCHES_PATH || process.env.EPL_API_MATCHES_PATH,
+    EPL_API_KEY: process.env.EPL_API_KEY,
+    EPL_API_TEAMS_PATH: process.env.EPL_API_TEAMS_PATH,
+    EPL_API_STANDINGS_PATH: process.env.EPL_API_STANDINGS_PATH,
+    EPL_API_MATCHES_PATH: process.env.EPL_API_MATCHES_PATH,
 };
 const COLLECTIONS_CONFIG = {
-    EPL_PROJECT_TEAMS_COLLECTION: import.meta.env.EPL_PROJECT_TEAMS_COLLECTION || process.env.EPL_PROJECT_TEAMS_COLLECTION,
-    EPL_PROJECT_STANDINGS_COLLECTION: import.meta.env.EPL_PROJECT_STANDINGS_COLLECTION || process.env.EPL_PROJECT_STANDINGS_COLLECTION,
-    EPL_PROJECT_MATCHES_COLLECTION: import.meta.env.EPL_PROJECT_MATCHES_COLLECTION || process.env.EPL_PROJECT_MATCHES_COLLECTION,
+    EPL_PROJECT_TEAMS_COLLECTION: process.env.EPL_PROJECT_TEAMS_COLLECTION,
+    EPL_PROJECT_STANDINGS_COLLECTION: process.env.EPL_PROJECT_STANDINGS_COLLECTION,
+    EPL_PROJECT_MATCHES_COLLECTION: process.env.EPL_PROJECT_MATCHES_COLLECTION,
 };
 
 async function getSTANDINGS() {
@@ -36,6 +36,8 @@ async function getSTANDINGS() {
 
 export default async ({ req, res, log, error }) => {
 
+  context.log("EPL_API_KEY:", API_CONFIG.EPL_API_KEY);
+  context.log("EPL_API_STANDINGS_PATH:", API_CONFIG.EPL_API_STANDINGS_PATH);
   // You can use the Appwrite SDK to interact with other services
   // For this example, we're using the Users service
   const client = new Client();
