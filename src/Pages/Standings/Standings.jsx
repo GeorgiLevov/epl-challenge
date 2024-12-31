@@ -1,21 +1,29 @@
-import React from 'react';
-import { useFootballData } from '../../../db/context/footballData.context';
+import React from "react";
+import { useFootballData } from "../../../db/context/footballData.context";
+import TeamStanding from "../../components/TeamStanding";
 
 function Standings() {
+  let { fullStandingsData } = useFootballData();
 
-    const {standings} = useFootballData();
+  const [standings, setStandings] = React.useState([]);
 
+  React.useEffect(() => {
+    if (typeof fullStandingsData === "string") {
+      const parsedData = JSON.parse(fullStandingsData);
+      if (parsedData && parsedData.standings[0].table) {
+        setStandings(parsedData.standings[0].table);
+      }
+    }
+  }, [fullStandingsData]);
 
-	React.useEffect(() => {
-        console.log("standings:",standings);
-        console.log("matches:",matches);
-        console.log("teams:",teams);
-    },[standings,matches,teams])
-
-	return <div>{standings && standings.map((team,index)=>{
-        console.log(team)
-        return <div key={index}>{team.team_name} / {team.position}</div>
-    })}</div>;
+  return (
+    <div>
+      {Array.isArray(standings) &&
+        standings.map((team, index) => (
+          <TeamStanding key={index} teamDetails={team} />
+        ))}
+    </div>
+  );
 }
 
 export default Standings;
