@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { COLORS, SHADOWS, QUERIES } from "../Tools/CONSTANTS";
 
 const SIZES = {
@@ -11,24 +11,31 @@ const SIZES = {
   medium: {
     "--borderRadius": 2 + "px",
     "--fontSize": 18 / 16 + "rem",
-    "--padding": "14px 20px"
+    "--padding": "14px 20px",
   },
   large: {
     "--borderRadius": 4 + "px",
     "--fontSize": 24 / 16 + "rem",
-    "--padding": "22px 40px"
+    "--padding": "22px 40px",
   },
   xl: {
     "--borderRadius": 4 + "px",
     "--fontSize": 30 / 16 + "rem",
-    "--padding": "30px 64px"
-  }
+    "--padding": "30px 64px",
+  },
 };
 
-const Button = ({ variant , size , children, onClick=()=>{return;}})=> {
-	const styles = SIZES[size];
+const Button = ({
+  variant,
+  size,
+  children,
+  onClick = () => {
+    return;
+  },
+}) => {
+  const styles = SIZES[size];
 
-	let StyledComponent;
+  let StyledComponent;
   if (variant === "fill") {
     StyledComponent = FillButton;
   } else if (variant === "outline") {
@@ -38,12 +45,15 @@ const Button = ({ variant , size , children, onClick=()=>{return;}})=> {
   } else if (variant === "backButton") {
     StyledComponent = BackButton;
   } else {
-		throw new Error(`Unrecognized Button variant: ${variant}`);
+    throw new Error(`Unrecognized Button variant: ${variant}`);
   }
 
-	return <StyledComponent role="button" style={styles} onClick={()=> onClick()}>{children}</StyledComponent>;
-}	
-
+  return (
+    <StyledComponent role="button" style={styles} onClick={() => onClick()}>
+      {children}
+    </StyledComponent>
+  );
+};
 
 const ButtonBase = styled.button`
   line-height: 1.25;
@@ -52,7 +62,7 @@ const ButtonBase = styled.button`
   font-weight: 600;
 
   position: relative;
-	display: inline-flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 
@@ -70,28 +80,28 @@ const ButtonBase = styled.button`
   transition: all 100ms;
   touch-action: manipulation;
 
-	-webkit-tap-highlight-color: transparent;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-	  &:hover,
-		&:focus {
-			box-shadow: ${SHADOWS.boxshadowLight};
-			outline-color: ${COLORS.primary};
-			outline-offset: 4px;
-		}
-	  &:hover {
-			transform: translateY(-1px);
-		}
-	  &:active {
-			border-color: ${COLORS.primary};
-			transform: translateY(0);
-		}
-`
+  &:hover,
+  &:focus {
+    box-shadow: ${SHADOWS.boxshadowLight};
+    outline-color: ${COLORS.primary};
+    outline-offset: 4px;
+  }
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    border-color: ${COLORS.primary};
+    transform: translateY(0);
+  }
+`;
 
 const FillButton = styled(ButtonBase)`
   background-color: ${COLORS.primary};
@@ -109,7 +119,7 @@ const OutlineButton = styled(ButtonBase)`
 
   &:hover {
     background-color: ${COLORS.offwhite};
-		border-color: ${COLORS.primaryLight};
+    border-color: ${COLORS.primaryLight};
   }
 `;
 
@@ -128,41 +138,40 @@ const GhostButton = styled(ButtonBase)`
 `;
 
 const BackButton = styled(ButtonBase)`
-	isolation: isolate;
+  isolation: isolate;
 
-	min-width: 64px;
-	width: 64px;
-	height: 64px;
+  min-width: 64px;
+  width: 64px;
+  height: 64px;
 
-	margin: 8px 0px;
-	padding: 0px;
-	border: 1px solid transparent;
-	border-radius: 50%;
-	/* transform: scale(0.8); */
-	
-	background-color: transparent;
-	outline-color: ${COLORS.primaryLight};
-	outline-offset: 6px;
-	
-	@media ${QUERIES.tabletAndUp} {
-		width: 96px;
-		height: 96px;
-		bottom: 32px;
-		margin: 48px 0px 16px 0px;
+  margin: 8px 0px;
+  padding: 0px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  /* transform: scale(0.8); */
+
+  background-color: transparent;
+  outline-color: ${COLORS.primaryLight};
+  outline-offset: 6px;
+
+  @media ${QUERIES.tabletAndUp} {
+    width: 96px;
+    height: 96px;
+    bottom: 32px;
+    margin: 48px 0px 16px 0px;
   }
 
-	&:hover,
-	&:focus {
-		ridge: ${COLORS.primary};
-		transform: scale(1.2);
-	}
-	&:hover {
-		transform: scale(1.2);
-	}
-	&:active {
-		border-color: ${COLORS.primaryLight};
-	}
-`
-
+  &:hover,
+  &:focus {
+    ridge: ${COLORS.primary};
+    transform: scale(1.2);
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    border-color: ${COLORS.primaryLight};
+  }
+`;
 
 export default Button;

@@ -1,6 +1,9 @@
 import React from "react";
 import TeamBasicInfo from "./TeamBasicInfo/TeamBasicInfo";
 import TeamSuccessMetrics from "./TeamSuccessMetrics/TeamSuccessMetrics";
+import styled from "styled-components/macro";
+import { SPACE } from "../../Tools/CONSTANTS";
+
 // teamDetails
 //
 // draw
@@ -17,7 +20,7 @@ import TeamSuccessMetrics from "./TeamSuccessMetrics/TeamSuccessMetrics";
 
 function TeamStanding({ teamDetails }) {
   return (
-    <div>
+    <TeamStandingWrapper>
       <TeamBasicInfo
         position={teamDetails.position}
         name={teamDetails.team.shortName}
@@ -30,8 +33,19 @@ function TeamStanding({ teamDetails }) {
         draw={teamDetails.draw}
         lost={teamDetails.lost}
       />
-    </div>
+    </TeamStandingWrapper>
   );
 }
 
 export default TeamStanding;
+
+const TeamStandingWrapper = styled.div`
+  border: 1px solid;
+  width: calc(100% + ${SPACE.small}%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+`;

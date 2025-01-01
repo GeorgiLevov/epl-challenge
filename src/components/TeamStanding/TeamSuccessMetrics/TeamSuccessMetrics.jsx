@@ -5,7 +5,6 @@ function TeamSuccessMetrics({ points, playedGames, won, draw, lost }) {
     <div>
       <span>{points}</span> / <span>{playedGames}</span> / <span>{won}</span> /{" "}
       <span>{draw}</span> / <span>{lost}</span>
-      <hr />
     </div>
   );
 }

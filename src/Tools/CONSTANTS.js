@@ -2,25 +2,25 @@ export const COLORS = {
   primary: "hsl(273deg 60% 22%)",
   primaryLight: "hsl(263deg 60% 50%)",
 
-	transparent: "hsl(0deg 0% 100% / 0%)",
+  transparent: "hsl(0deg 0% 100% / 0%)",
   white: "hsl(0deg 0%  100%)",
   red: "hsl(339deg 100% 50%)",
   green: "hsl(152deg 100% 50%)",
   blue: "hsl(184deg 100% 51%)",
   yellow: "hsl(65deg 100% 50%)",
-	
-	shadowColor: `0deg 0% 49%`,
+
+  shadowColor: `0deg 0% 49%`,
   offwhite: "hsl(0 0% 96% / 1)",
   gray: "hsl(240deg 10% 50%)",
   transparentGray15: "hsl(240deg 10% 50% / 15%)",
   black: "hsl(0deg 0% 0%)",
 
-	AVL_primary: "#95BFE5",
-	AVL_secondary: "#670E36",
+  AVL_primary: "#95BFE5",
+  AVL_secondary: "#670E36",
   EVE_primary: "#003399",
-	EVE_secondary: "#FFFFFF",
+  EVE_secondary: "#FFFFFF",
   BOU_primary: "#B50E12",
-	BOU_secondary: "#000000",
+  BOU_secondary: "#000000",
   BHA_primary: "0057B8",
   BHA_secondary: "#FFCD00",
   ARS_primary: "#DB0007",
@@ -58,35 +58,39 @@ export const COLORS = {
 };
 
 export const SHADOWS = {
-	boxshadowLight: "hsla(0, 0%, 0%, 0.1) 0 4px 12px",
-	boxshadowPrimaryLight: "hsl(263deg 60% 50%) 0 4px 12px",
+  boxshadowLight: "hsla(0, 0%, 0%, 0.1) 0 4px 12px",
+  boxshadowPrimaryLight: "hsl(263deg 60% 50%) 0 4px 12px",
   shadowElevationLow: `0.3px 0.5px 0.7px hsl(${COLORS.shadowColor} / 0.34), 0.4px 0.8px 1px -1.2px hsl(${COLORS.shadowColor} / 0.34), 1px 2px 2.5px -2.5px hsl(${COLORS.shadowColor} / 0.34)`,
-  shadowElevationMedium: ` 0.3px 0.5px 0.7px hsl(${COLORS.shadowColor} / 0.36), 0.8px 1.6px 2px -0.8px hsl(${COLORS.shadowColor} / 0.36), 2.1px 4.1px 5.2px -1.7px hsl(${COLORS.shadowColor} / 0.36), 5px 10px 12.6px -2.5px hsl(${COLORS.shadowColor} / 0.36)`, 
-	shadowElevationHigh:` 0.3px 0.5px 0.7px hsl(${COLORS.shadowColor} / 0.34), 1.5px 2.9px 3.7px -0.4px hsl(${COLORS.shadowColor} / 0.34), 2.7px 5.4px 6.8px -0.7px hsl(${COLORS.shadowColor} / 0.34), 4.5px 8.9px 11.2px -1.1px hsl(${COLORS.shadowColor} / 0.34), 7.1px 14.3px 18px -1.4px hsl(${COLORS.shadowColor} / 0.34), 11.2px 22.3px 28.1px -1.8px hsl(${COLORS.shadowColor} / 0.34), 17px 33.9px 42.7px -2.1px hsl(${COLORS.shadowColor} / 0.34), 25px 50px 62.9px -2.5px hsl(${COLORS.shadowColor} / 0.34)`
-}
+  shadowElevationMedium: ` 0.3px 0.5px 0.7px hsl(${COLORS.shadowColor} / 0.36), 0.8px 1.6px 2px -0.8px hsl(${COLORS.shadowColor} / 0.36), 2.1px 4.1px 5.2px -1.7px hsl(${COLORS.shadowColor} / 0.36), 5px 10px 12.6px -2.5px hsl(${COLORS.shadowColor} / 0.36)`,
+  shadowElevationHigh: ` 0.3px 0.5px 0.7px hsl(${COLORS.shadowColor} / 0.34), 1.5px 2.9px 3.7px -0.4px hsl(${COLORS.shadowColor} / 0.34), 2.7px 5.4px 6.8px -0.7px hsl(${COLORS.shadowColor} / 0.34), 4.5px 8.9px 11.2px -1.1px hsl(${COLORS.shadowColor} / 0.34), 7.1px 14.3px 18px -1.4px hsl(${COLORS.shadowColor} / 0.34), 11.2px 22.3px 28.1px -1.8px hsl(${COLORS.shadowColor} / 0.34), 17px 33.9px 42.7px -2.1px hsl(${COLORS.shadowColor} / 0.34), 25px 50px 62.9px -2.5px hsl(${COLORS.shadowColor} / 0.34)`,
+};
 
+export const SPACE = {
+  small: 8,
+  medium: 16,
+  large: 32,
+};
 
 export const WEIGHTS = {
-    normal: 500,
-    medium: 600,
-    bold: 800,
+  normal: 500,
+  medium: 600,
+  bold: 800,
 };
 
 export const BREAKPOINTS = {
-    phone: 600,
-    tablet: 950,
-    laptop: 1300,
+  phone: 600,
+  tablet: 950,
+  laptop: 1300,
 };
 
 export const QUERIES = {
-    phoneAndUp: `(min-width: ${BREAKPOINTS.phone / 16}rem)`,
-    tabletAndUp: `(min-width: ${BREAKPOINTS.tablet / 16}rem)`,
-    laptopAndUp: `(min-width: ${BREAKPOINTS.laptop / 16}rem)`,
+  phoneAndUp: `(min-width: ${BREAKPOINTS.phone / 16}rem)`,
+  tabletAndUp: `(min-width: ${BREAKPOINTS.tablet / 16}rem)`,
+  laptopAndUp: `(min-width: ${BREAKPOINTS.laptop / 16}rem)`,
 };
 
-
 export const MATCHGRADIENTS = {
-	manutdWolves: `linear-gradient(
+  manutdWolves: `linear-gradient(
   90deg,
   hsl(0deg 100% 50%) 1%,
   hsl(0deg 100% 45%) 32%,
@@ -112,5 +116,4 @@ export const MATCHGRADIENTS = {
   hsl(239deg 100% 45%) 68%,
   hsl(239deg 100% 50%) 99%
 )`,
-
-}
+};

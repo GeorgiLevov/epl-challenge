@@ -1,24 +1,27 @@
 :root {
-	font-size: 16px;
+  font-size: 16px;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  font-family: "Radio Canada", "Fallback",Helvetica,sans-serif;
+  font-family: "Radio Canada", "Fallback", Helvetica, sans-serif;
 }
 
 html {
-	height: 100%;
-	height: 100dvh;
-	overflow-y: scroll;
+  height: 100%;
+  height: 100dvh;
+  overflow-y: scroll;
+  min-width: 280px;
 }
 
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /*
@@ -33,8 +36,8 @@ html {
   4. Improve text rendering
 */
 body {
-	height: 100%;
-	height: 100dvh;
+  height: 100%;
+  height: 100dvh;
   line-height: 1.5;
   place-items: center;
   min-width: 300px;
@@ -44,29 +47,48 @@ body {
 /*
   5. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /*
   6. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /*
   7. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Outfit", sans-serif;
-	font-weight: bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
 }
 /*
   8. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }

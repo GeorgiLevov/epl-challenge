@@ -1,6 +1,8 @@
 import React from "react";
 import { useFootballData } from "../../../db/context/footballData.context";
 import TeamStanding from "../../components/TeamStanding";
+import styled from "styled-components/macro";
+import { SPACE } from "../../Tools/CONSTANTS";
 
 function Standings() {
   let { fullStandingsData } = useFootballData();
@@ -17,13 +19,24 @@ function Standings() {
   }, [fullStandingsData]);
 
   return (
-    <div>
+    <TeamsWrapper>
       {Array.isArray(standings) &&
         standings.map((team, index) => (
           <TeamStanding key={index} teamDetails={team} />
         ))}
-    </div>
+    </TeamsWrapper>
   );
 }
 
 export default Standings;
+
+const TeamsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: ${SPACE.medium}px;
+`;
