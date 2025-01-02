@@ -2,7 +2,7 @@ import React from "react";
 import TeamBasicInfo from "./TeamBasicInfo/TeamBasicInfo";
 import TeamSuccessMetrics from "./TeamSuccessMetrics/TeamSuccessMetrics";
 import styled from "styled-components/macro";
-import { SPACE } from "../../Tools/CONSTANTS";
+import { BREAKPOINTS, SPACE } from "../../Tools/CONSTANTS";
 
 // teamDetails
 //
@@ -41,7 +41,8 @@ export default TeamStanding;
 
 const TeamStandingWrapper = styled.div`
   border: 1px solid;
-  width: calc(100% + ${SPACE.small}%);
+  width: 100%;
+  max-width: ${BREAKPOINTS.phone / 2}px;
   position: relative;
   display: flex;
   flex-direction: column;
