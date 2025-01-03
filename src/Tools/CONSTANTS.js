@@ -84,9 +84,9 @@ export const BREAKPOINTS = {
 };
 
 export const QUERIES = {
-  phoneAndUp: `(min-width: ${BREAKPOINTS.phone / 16}rem)`,
-  tabletAndUp: `(min-width: ${BREAKPOINTS.tablet / 16}rem)`,
-  laptopAndUp: `(min-width: ${BREAKPOINTS.laptop / 16}rem)`,
+  phoneAndUp: `(min-width: ${BREAKPOINTS.phone}px)`,
+  tabletAndUp: `(min-width: ${BREAKPOINTS.tablet}px)`,
+  laptopAndUp: `(min-width: ${BREAKPOINTS.laptop}px)`,
 };
 
 export const MATCHGRADIENTS = {
