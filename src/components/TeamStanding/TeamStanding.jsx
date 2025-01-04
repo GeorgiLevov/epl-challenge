@@ -2,7 +2,13 @@ import React from "react";
 import TeamBasicInfo from "./TeamBasicInfo/TeamBasicInfo";
 import TeamSuccessMetrics from "./TeamSuccessMetrics/TeamSuccessMetrics";
 import styled from "styled-components/macro";
-import { BREAKPOINTS, SPACE } from "../../Tools/CONSTANTS";
+import {
+  BREAKPOINTS,
+  COLORS,
+  GRATIENTS,
+  SHADOWS,
+  SPACE,
+} from "../../Tools/CONSTANTS";
 
 // teamDetails
 //
@@ -40,13 +46,23 @@ function TeamStanding({ teamDetails }) {
 export default TeamStanding;
 
 const TeamStandingWrapper = styled.div`
-  border: 1px solid;
   width: 100%;
-  max-width: ${BREAKPOINTS.phone / 2}px;
-  position: relative;
+  max-width: ${BREAKPOINTS.phone / 2 + 20}px;
+
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
+
+  border: 0px transparent;
+  padding: ${SPACE.small}px 0px;
+  /* background-color: ${COLORS.grayCard}; */
+  background-image: ${GRATIENTS.cardGradient};
+
+  /* box-shadow: ${SHADOWS.boxShadowCard}; */
+
+  &:hover {
+    /* box-shadow: ${SHADOWS.boxShadowCardHover}; */
+  }
 `;

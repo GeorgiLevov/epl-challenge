@@ -21,6 +21,7 @@ const TeamMetricsWrapper = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
   gap: ${SPACE.small}px;
+  margin-right: ${SPACE.large}px;
 
   span {
     width: 2.5em;

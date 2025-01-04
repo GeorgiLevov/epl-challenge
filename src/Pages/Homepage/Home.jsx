@@ -27,9 +27,7 @@ const Home = () => {
   ];
   let currentGreeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // const paths_v0_3 = ['Score','Weeks','Rules','Teams'];
-  const paths_v0_2 = ["Score", "Weeks", "Rules"];
-  // const paths_v0_1 = ['Weeks','Score'];
+  const paths_v0_2 = ["Score", "Weeks", "Standings", "Rules"];
 
   const links = paths_v0_2.map((element, index) => {
     return (
