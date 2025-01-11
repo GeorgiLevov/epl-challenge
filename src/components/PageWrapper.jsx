@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 const PageWrapper = ({ children }) => {
   return (
     <StyledWrapper
-      initial={{ backgroundPositionX: "0px", backgroundPositionY: "161px" }}
-      animate={{ backgroundPositionX: "161px", backgroundPositionY: "0px" }}
-      transition={{ ease: "linear", duration: 16, repeat: Infinity }}
+    //   initial={{ backgroundPositionX: "0px", backgroundPositionY: "161px" }}
+    //   animate={{ backgroundPositionX: "161px", backgroundPositionY: "0px" }}
+    //   transition={{ ease: "linear", duration: 16, repeat: Infinity }}
     >
       {children}
     </StyledWrapper>
@@ -31,5 +31,5 @@ const StyledWrapper = styled(motion.div)`
   z-index: 2;
 
   background-color: ${COLORS.offwhite};
-  background-image: url(${backgroundLight});
+  /* background-image: url(${backgroundLight}); */
 `;

@@ -13,6 +13,9 @@ export const COLORS = {
   offwhite: "hsl(0 0% 96% / 1)",
   gray: "hsl(240deg 10% 50%)",
   transparentGray15: "hsl(240deg 10% 50% / 15%)",
+  transparentGray30: "hsl(240deg 10% 50% / 30%)",
+  transparentGray50: "hsl(240deg 10% 50% / 50%)",
+  transparentGray75: "hsl(240deg 10% 50% / 75%)",
   black: "hsl(0deg 0% 0%)",
   grayCard: "hsl(225deg 20% 85%)",
 
@@ -126,10 +129,17 @@ export const GRATIENTS = {
   hsl(239deg 100% 50%) 99%
 )`,
 
-  cardGradient: `linear-gradient(90deg,
-  hsl(0deg 0% 100% / 0%), 0%,
-  hsl(0deg 0% 100% / 25%), 25%,
-  hsl(200deg 15% 70% / 45%), 65%,
-  hsl(200deg 15% 70%)
+  cardGradient: `linear-gradient(110deg,
+   hsl(263deg 60% 50% / 0%), 30%,
+   hsl(263deg 60% 50% / 15%), 55%,
+   hsl(263deg 60% 50% / 45%), 90%,
+   hsl(263deg 60% 50% / 80%)
   )`,
 };
+//  )
+
+// linear-gradient(130deg,
+//  hsl(263deg 60% 50% / 0%), 27%,
+//  hsl(263deg 60% 50% / 15%), 52%,
+//  hsl(263deg 60% 50% / 45%), 85%,
+//  hsl(263deg 60% 50% / 80%))

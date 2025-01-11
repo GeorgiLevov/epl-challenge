@@ -22,7 +22,7 @@ function TeamBasicInfo({ position, name, logo }) {
         {position}
       </PositionNumber>
       <TeamName>{name}</TeamName>
-      <TeamLogo src={logo} width={100} />
+      <TeamLogo src={`../../../src/assets/logos/${logo}`} width={100} />
     </TeamInfoWrapper>
   );
 }
@@ -51,7 +51,7 @@ const PositionNumber = styled.span`
   letter-spacing: -4px;
 
   flex: 0 0 25%;
-  margin-left: -${SPACE.large}px;
+  margin-left: -${SPACE.large + SPACE.small}px;
   text-align: center;
 
   background-color: transparent;
@@ -71,8 +71,13 @@ const TeamName = styled.h2`
 const TeamLogo = styled.img`
   display: block;
   position: absolute;
-  top: ${(SPACE.medium * 3) / 4}px;
-  right: 0;
-  width: 80px;
+  top: 12px;
+  right: 2px;
   height: 80px;
+  object-fit: contain;
+  /* height: 100px; */
+  /* z-index: 1; */
+  /* object-fit: cover; */
+  /* object-position: bottom; */
+  /* mask-image: linear-gradient(to top, transparent 15%, hsl(0deg 0% 100%) 25%); */
 `;

@@ -38,5 +38,6 @@ const TeamsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: ${SPACE.medium}px 0px;
   gap: ${SPACE.medium}px;
 `;

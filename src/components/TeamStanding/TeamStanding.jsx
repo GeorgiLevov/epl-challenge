@@ -30,7 +30,7 @@ function TeamStanding({ teamDetails }) {
       <TeamBasicInfo
         position={teamDetails.position}
         name={teamDetails.team.shortName}
-        logo={teamDetails.team.crest}
+        logo={`${teamDetails.team.shortName}.png`}
       ></TeamBasicInfo>
       <TeamSuccessMetrics
         points={teamDetails.points}
@@ -57,7 +57,8 @@ const TeamStandingWrapper = styled.div`
 
   border: 0px transparent;
   padding: ${SPACE.small}px 0px;
-  /* background-color: ${COLORS.grayCard}; */
+
+  background-color: ${COLORS.transparent};
   background-image: ${GRATIENTS.cardGradient};
 
   /* box-shadow: ${SHADOWS.boxShadowCard}; */
