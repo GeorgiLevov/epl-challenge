@@ -130,10 +130,10 @@ export const GRATIENTS = {
 )`,
 
   cardGradient: `linear-gradient(110deg,
-   hsl(263deg 60% 50% / 0%), 30%,
-   hsl(263deg 60% 50% / 15%), 55%,
-   hsl(263deg 60% 50% / 45%), 90%,
-   hsl(263deg 60% 50% / 80%)
+   hsl(0deg 0% 50% / 0%), 30%,
+   hsl(0deg 0% 50% / 15%), 55%,
+   hsl(0deg 0% 50% / 45%), 90%,
+   hsl(0deg 0% 50% / 80%)
   )`,
 };
 //  )

@@ -36,6 +36,7 @@ async function getMATCHES() {
 
 export default async ({ req, res, log, error }) => {
 
+  log("EPL_API_MATCHES_PATH:", API_CONFIG.EPL_API_MATCHES_PATH);
   // You can use the Appwrite SDK to interact with other services
   // For this example, we're using the Users service
   const client = new Client();

@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import { COLORS } from "../../Tools/CONSTANTS";
 
 function List({ items = [], children = [], variant }) {
+  console.log(items);
   let StyledComponent;
   if (variant === "scorelist") {
     StyledComponent = StyledScoreList;

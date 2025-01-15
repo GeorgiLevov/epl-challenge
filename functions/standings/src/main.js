@@ -49,11 +49,6 @@ export default async ({ req, res, log, error }) => {
 
   const teamStandings = await getSTANDINGS();
 
-//   log("logging...");
-//   log(API_CONFIG.EPL_API_STANDINGS_PATH);
-//   log(COLLECTIONS_CONFIG.EPL_PROJECT_STANDINGS_COLLECTION);
-//   log(EPL_PROJECT_KEY);
-
   if (Object.keys(teamStandings).length > 0) {
     
     const updateStandingsData = db.updateDocument(
